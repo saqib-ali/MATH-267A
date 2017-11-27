@@ -10,8 +10,9 @@ continous2categorical <- function(x){
     varmax <- max(x[i])
     varstep <- (varmax-varmin)/5
     
+    labs <- c("low", "low-medium", "medium", "medium-high", "high")
     #vartemp <- as.character(cut(x[,i], seq(varmin, varmax, varstep)))
-    vartemp <- as.character(cut(x[,i], breaks = 5))
+    vartemp <- cut(x[,i], breaks = 5, labels = labs)
     
     
     out[i]<-vartemp
@@ -22,4 +23,3 @@ continous2categorical <- function(x){
   colnames(out)<-colnames(x)
   return(data.frame(out))
 }
-debug(continous2categorical)
