@@ -10,7 +10,9 @@ continous2categorical <- function(x){
     varmax <- max(x[i])
     varstep <- (varmax-varmin)/5
     
-    vartemp <- as.character(cut(as.numeric(x[,i]), seq(varmin, varmax, varstep)))
+    #vartemp <- as.character(cut(x[,i], seq(varmin, varmax, varstep)))
+    vartemp <- as.character(cut(x[,i], breaks = 5))
+    
     
     out[i]<-vartemp
     
