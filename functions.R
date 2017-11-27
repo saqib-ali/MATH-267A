@@ -1,4 +1,5 @@
-# created continous2categorical function. This function takes a data frame of continous variables and converts to a data frame of categorical variables. The variable is the response variable.
+# created continous2categorical function. This function takes a data frame of continous variables and 
+# converts to a data frame of categorical variables. The variable is the response variable.
 
 continous2categorical <- function(x){
   numberoffactors <- ncol(x)-1
@@ -6,9 +7,9 @@ continous2categorical <- function(x){
   for (i in 1:numberoffactors){
     
     
-    varmin <- min(x[i])
-    varmax <- max(x[i])
-    varstep <- (varmax-varmin)/5
+    #varmin <- min(x[i])
+    #varmax <- max(x[i])
+    #varstep <- (varmax-varmin)/5
     
     labs <- c("low", "low-medium", "medium", "medium-high", "high")
     #vartemp <- as.character(cut(x[,i], seq(varmin, varmax, varstep)))
@@ -23,3 +24,19 @@ continous2categorical <- function(x){
   colnames(out)<-colnames(x)
   return(data.frame(out))
 }
+
+cathistplot <- function(x){
+  
+  xcolumnnames <- colnames(x)
+  responsecol <- ncol(x)
+
+  
+  plot_hist <- function (column, data, response) ggplot(data, aes(x=get(column), ..count..)) +geom_bar(aes(fill=get(response)), position="dodge") + xlab(column) + scale_fill_discrete(name=response)
+  
+  myplots <- lapply(colnames(x), plot_hist, data = x, response=xcolumnnames[responsecol])
+  myplots <- myplots[-length(myplots)]
+
+  grid.arrange(grobs = myplots, ncol=1)   
+
+}
+
