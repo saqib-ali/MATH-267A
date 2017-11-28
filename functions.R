@@ -1,5 +1,5 @@
 # created continous2categorical function. This function takes a data frame of continous variables and 
-# converts to a data frame of categorical variables. The variable is the response variable.
+# converts to a data frame of categorical variables. The last variable is the response variable.
 
 continous2categorical <- function(x){
   numberoffactors <- ncol(x)-1
@@ -24,6 +24,9 @@ continous2categorical <- function(x){
   colnames(out)<-colnames(x)
   return(data.frame(out))
 }
+
+# cathistogram plots each variable against the response variable. 
+# The last variable is the response variable.
 
 cathistogram <- function(x){
   
