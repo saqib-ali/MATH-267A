@@ -1,2 +1,3 @@
 # MATH-267A
-Maham Test
+## Creating package in R for Categorical data analysis 
+### The package includes functions  
