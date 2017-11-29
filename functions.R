@@ -1,4 +1,4 @@
-# created continous2categorical function. This function takes a data frame of continous variables and 
+# continous2categorical function. This function takes a data frame of continous variables and 
 # converts to a data frame of categorical variables. The last variable is the response variable.
 
 continous2categorical <- function(x){
@@ -7,12 +7,8 @@ continous2categorical <- function(x){
   for (i in 1:numberoffactors){
     
     
-    #varmin <- min(x[i])
-    #varmax <- max(x[i])
-    #varstep <- (varmax-varmin)/5
     
     labs <- c("low", "low-medium", "medium", "medium-high", "high")
-    #vartemp <- as.character(cut(x[,i], seq(varmin, varmax, varstep)))
     vartemp <- cut(x[,i], breaks = 5, labels = labs)
     
     
