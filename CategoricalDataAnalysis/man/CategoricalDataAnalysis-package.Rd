@@ -1,0 +1,34 @@
+\name{CategoricalDataAnalysis-package}
+\alias{CategoricalDataAnalysis-package}
+\alias{CategoricalDataAnalysis}
+\docType{package}
+\title{
+\packageTitle{CategoricalDataAnalysis}
+}
+\description{
+\packageDescription{CategoricalDataAnalysis}
+}
+\details{
+
+The DESCRIPTION file:
+\packageDESCRIPTION{CategoricalDataAnalysis}
+\packageIndices{CategoricalDataAnalysis}
+~~ An overview of how to use the package, including the most important functions ~~
+}
+\author{
+\packageAuthor{CategoricalDataAnalysis}
+
+Maintainer: \packageMaintainer{CategoricalDataAnalysis}
+}
+\references{
+~~ Literature or other references for background information ~~
+}
+~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R documentation directory ~~
+\keyword{ package }
+\seealso{
+~~ Optional links to other man pages, e.g. ~~
+~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
+}
+\examples{
+%%~~ simple examples of the most important functions ~~
+}

@@ -123,11 +123,12 @@ plot.local.or <- function(m, col = c("azure4", "aquamarine4")) {
     for (j in 1:(nc - 1)) { 
       fourfoldplot(m[i:(i+1), j:(j+1)], color = col)
     }
+}
 
-# cathistogram plots each variable against the response variable. 
+# catbarchart plots each variable against the response variable. 
 # The last variable is the response variable.
 
-cathistogram <- function(x){
+catbarchart <- function(x){
   
   xcolumnnames <- colnames(x)
   responsecol <- ncol(x)

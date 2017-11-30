@@ -1,0 +1,424 @@
+\nonstopmode{}
+\documentclass[letterpaper]{book}
+\usepackage[times,inconsolata,hyper]{Rd}
+\usepackage{makeidx}
+\usepackage[utf8,latin1]{inputenc}
+% \usepackage{graphicx} % @USE GRAPHICX@
+\makeindex{}
+\begin{document}
+\chapter*{}
+\begin{center}
+{\textbf{\huge Package `CategoricalDataAnalysis'}}
+\par\bigskip{\large \today}
+\end{center}
+\begin{description}
+\raggedright{}
+\item[Type]\AsIs{Package}
+\item[Title]\AsIs{Categorical Data Analysis}
+\item[Version]\AsIs{1.0}
+\item[Date]\AsIs{2017-11-30}
+\item[Author]\AsIs{Maham Niaz, Saqib Ali}
+\item[Maintainer]\AsIs{Who to complain to }\email{yourfault@somewhere.net}\AsIs{}
+\item[Description]\AsIs{More about what it does (maybe more than one line)}
+\item[License]\AsIs{GPL (>= 2)}
+\end{description}
+\Rdcontents{\R{} topics documented:}
+\inputencoding{utf8}
+\HeaderA{CategoricalDataAnalysis-package}{Categorical Data Analysis}{CategoricalDataAnalysis.Rdash.package}
+\aliasA{CategoricalDataAnalysis}{CategoricalDataAnalysis-package}{CategoricalDataAnalysis}
+\keyword{package}{CategoricalDataAnalysis-package}
+%
+\begin{Description}\relax
+More about what it does (maybe more than one line)
+\end{Description}
+%
+\begin{Details}\relax
+
+The DESCRIPTION file:
+This package was not yet installed at build time.\\{}
+
+Index:  This package was not yet installed at build time.\\{}
+\textasciitilde{}\textasciitilde{} An overview of how to use the package, including the most important functions \textasciitilde{}\textasciitilde{}
+\end{Details}
+%
+\begin{Author}\relax
+Maham Niaz, Saqib Ali
+
+Maintainer: Who to complain to <yourfault@somewhere.net>
+\end{Author}
+%
+\begin{References}\relax
+\textasciitilde{}\textasciitilde{} Literature or other references for background information \textasciitilde{}\textasciitilde{}
+\end{References}
+%
+\begin{SeeAlso}\relax
+\textasciitilde{}\textasciitilde{} Optional links to other man pages, e.g. \textasciitilde{}\textasciitilde{}
+\textasciitilde{}\textasciitilde{} \code{\LinkA{<pkg>}{<pkg>}} \textasciitilde{}\textasciitilde{}
+\end{SeeAlso}
+\inputencoding{utf8}
+\HeaderA{catbarchart}{Plot Barchart for Categorical Data}{catbarchart}
+\keyword{\textbackslash{}textasciitilde{}kwd1}{catbarchart}
+\keyword{\textbackslash{}textasciitilde{}kwd2}{catbarchart}
+%
+\begin{Usage}
+\begin{verbatim}
+catbarchart(x)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{x}] 
+
+
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Examples}
+\begin{ExampleCode}
+##---- Should be DIRECTLY executable !! ----
+##-- ==>  Define data, use random,
+##--	or do  help(data=index)  for the standard data sets.
+
+## The function is currently defined as
+function (x) 
+{
+    xcolumnnames <- colnames(x)
+    responsecol <- ncol(x)
+    plot_hist <- function(column, data, response) ggplot(data, 
+        aes(x = get(column), ..count..)) + geom_bar(aes(fill = get(response)), 
+        position = "dodge") + xlab(column) + scale_fill_discrete(name = response)
+    myplots <- lapply(colnames(x), plot_hist, data = x, response = xcolumnnames[responsecol])
+    myplots <- myplots[-length(myplots)]
+    grid.arrange(grobs = myplots, ncol = 1)
+  }
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{chisq.indep}{testing for independence between two categorical variable  }{chisq.indep}
+\keyword{\textbackslash{}textasciitilde{}kwd1}{chisq.indep}
+\keyword{\textbackslash{}textasciitilde{}kwd2}{chisq.indep}
+%
+\begin{Usage}
+\begin{verbatim}
+chisq.indep(m, level = 0.05, digits = 4, print = TRUE)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{m}] 
+
+
+\item[\code{level}] 
+
+
+\item[\code{digits}] 
+
+
+\item[\code{print}] 
+
+
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Examples}
+\begin{ExampleCode}
+##---- Should be DIRECTLY executable !! ----
+##-- ==>  Define data, use random,
+##--	or do  help(data=index)  for the standard data sets.
+
+## The function is currently defined as
+function (m, level = 0.05, digits = 4, print = TRUE) 
+{
+    r.sum <- rowSums(m)
+    c.sum <- colSums(m)
+    n <- sum(m)
+    exp.ct <- outer(r.sum, c.sum, "*")/n
+    res <- m - exp.ct
+    p.res <- res/sqrt(exp.ct)
+    X.sq <- sum(p.res^2)
+    G.sq <- 2 * sum(m * (log(m) - log(exp.ct)))
+    df <- (nrow(m) - 1) * (ncol(m) - 1)
+    c.val <- qchisq(level, df = df, lower.tail = FALSE)
+    est.se <- sqrt(exp.ct * outer((1 - r.sum/n), (1 - c.sum/n), 
+        "*"))
+    s.res <- res/est.se
+    if (print) {
+        cat("Chi-squared test of independence\n")
+        cat("  Level = ", level, ", df = ", df, ", critical value = ", 
+            round(c.val, digits), "\n", sep = "")
+        cat("  X-squared = ", round(X.sq, digits), "\n", sep = "")
+        cat("  G-squared = ", round(G.sq, digits), sep = "")
+    }
+    invisible(list(X.sq = X.sq, df = df, expected = exp.ct, pearson.res = p.res, 
+        std.res = s.res))
+  }
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{continous2categorical}{continous2categorical function.}{continous2categorical}
+\keyword{\textbackslash{}textasciitilde{}kwd1}{continous2categorical}
+\keyword{\textbackslash{}textasciitilde{}kwd2}{continous2categorical}
+%
+\begin{Description}\relax
+
+continous2categorical function. This function takes a data frame of continous variables and converts to a data frame of categorical variables. The last variable is the response variable.
+
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+continous2categorical(x)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{x}] 
+
+
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Examples}
+\begin{ExampleCode}
+##---- Should be DIRECTLY executable !! ----
+##-- ==>  Define data, use random,
+##--	or do  help(data=index)  for the standard data sets.
+
+## The function is currently defined as
+function (x) 
+{
+    numberoffactors <- ncol(x) - 1
+    out <- data.frame(0, matrix(nrow = nrow(x), ncol = 1))
+    for (i in 1:numberoffactors) {
+        labs <- c("low", "low-medium", "medium", "medium-high", 
+            "high")
+        vartemp <- cut(x[, i], breaks = 5, labels = labs)
+        out[i] <- vartemp
+    }
+    i <- i + 1
+    out[i] <- x[i]
+    colnames(out) <- colnames(x)
+    return(data.frame(out))
+  }
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{count\_mat}{creating contingency matrix for categorical data analysis}{count.Rul.mat}
+\keyword{\textbackslash{}textasciitilde{}kwd1}{count\_mat}
+\keyword{\textbackslash{}textasciitilde{}kwd2}{count\_mat}
+%
+\begin{Usage}
+\begin{verbatim}
+count_mat(df)
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{df}] 
+
+
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Examples}
+\begin{ExampleCode}
+##---- Should be DIRECTLY executable !! ----
+##-- ==>  Define data, use random,
+##--	or do  help(data=index)  for the standard data sets.
+
+## The function is currently defined as
+function (df) 
+{
+    df_dim <- dim(df)
+    if (df_dim[2] == 2 && length(df_dim) == 2) {
+        factor_df1 <- as.factor(df[, 1])
+        factor_df2 <- as.factor(df[, 2])
+        lev_col1 = levels(factor_df1)
+        lev_col2 = levels(factor_df2)
+        len_col1 = length(lev_col1)
+        len_col2 = length(lev_col2)
+        val = 1
+        for (i in lev_col1) {
+            for (j in lev_col2) {
+                val = c(val, length(which(df[, 1] == i & df[, 
+                  2] == j)))
+            }
+        }
+        out = matrix(val[-1], byrow = TRUE, nrow = length(lev_col1), 
+            dimnames = list(lev_col1, lev_col2))
+    }
+    else (out = "check dimension")
+    return(out)
+  }
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{crabs}{contains the data analyzed by Brockmann (1996) and is discussed extensively in Agresti (2002). This is a space-delimited text file in which the variable names appear in the first row. Background}{crabs}
+\keyword{datasets}{crabs}
+%
+\begin{Usage}
+\begin{verbatim}
+data("crabs")
+\end{verbatim}
+\end{Usage}
+%
+\begin{Format}
+A data frame with 174 observations on the following 5 variables.
+\begin{description}
+
+\item[\code{V1}] a factor with levels \code{2} \code{3} \code{4} \code{5} \code{color}
+\item[\code{V2}] a factor with levels \code{1} \code{2} \code{3} \code{spine}
+\item[\code{V3}] a factor with levels \code{21.0} \code{22.0} \code{22.5} \code{22.9} \code{23.0} \code{23.1} \code{23.2} \code{23.4} \code{23.5} \code{23.7} \code{23.8} \code{23.9} \code{24.0} \code{24.1} \code{24.2} \code{24.3} \code{24.5} \code{24.7} \code{24.8} \code{24.9} \code{25.0} \code{25.1} \code{25.2} \code{25.3} \code{25.4} \code{25.5} \code{25.6} \code{25.7} \code{25.8} \code{25.9} \code{26.0} \code{26.1} \code{26.2} \code{26.3} \code{26.5} \code{26.7} \code{26.8} \code{27.0} \code{27.1} \code{27.2} \code{27.3} \code{27.4} \code{27.5} \code{27.6} \code{27.7} \code{27.8} \code{27.9} \code{28.0} \code{28.2} \code{28.3} \code{28.4} \code{28.5} \code{28.7} \code{28.9} \code{29.0} \code{29.3} \code{29.5} \code{29.7} \code{29.8} \code{30.0} \code{30.2} \code{30.3} \code{30.5} \code{31.7} \code{31.9} \code{33.5} \code{width}
+\item[\code{V4}] a factor with levels \code{0} \code{1} \code{10} \code{11} \code{12} \code{14} \code{15} \code{2} \code{3} \code{4} \code{5} \code{6} \code{7} \code{8} \code{9} \code{num.satellites}
+\item[\code{V5}] a factor with levels \code{1200} \code{1300} \code{1400} \code{1475} \code{1550} \code{1600} \code{1650} \code{1700} \code{1800} \code{1850} \code{1900} \code{1950} \code{1967} \code{2000} \code{2025} \code{2050} \code{2100} \code{2150} \code{2175} \code{2200} \code{2225} \code{2250} \code{2275} \code{2300} \code{2350} \code{2400} \code{2450} \code{2500} \code{2550} \code{2600} \code{2625} \code{2650} \code{2700} \code{2750} \code{2800} \code{2850} \code{2867} \code{2900} \code{2925} \code{2950} \code{3000} \code{3025} \code{3050} \code{3100} \code{3150} \code{3200} \code{3225} \code{3250} \code{3275} \code{3300} \code{3325} \code{3500} \code{3600} \code{3725} \code{3850} \code{5200} \code{weight}
+
+\end{description}
+
+\end{Format}
+%
+\begin{Examples}
+\begin{ExampleCode}
+data(crabs)
+## maybe str(crabs) ; plot(crabs) ...
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{crabs2}{contains the data analyzed by Brockmann (1996) and is discussed extensively in Agresti (2002). This is a space-delimited text file in which the variable names appear in the first row. Background}{crabs2}
+\keyword{datasets}{crabs2}
+%
+\begin{Usage}
+\begin{verbatim}
+data("crabs2")
+\end{verbatim}
+\end{Usage}
+%
+\begin{Format}
+A data frame with 173 observations on the following 5 variables.
+\begin{description}
+
+\item[\code{color}] a numeric vector
+\item[\code{spine}] a numeric vector
+\item[\code{width}] a numeric vector
+\item[\code{weight}] a numeric vector
+\item[\code{satellite}] a logical vector
+
+\end{description}
+
+\end{Format}
+%
+\begin{Examples}
+\begin{ExampleCode}
+data(crabs2)
+## maybe str(crabs2) ; plot(crabs2) ...
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{odds.ratios}{creating a table with local or global odds ratios }{odds.ratios}
+\keyword{\textbackslash{}textasciitilde{}kwd1}{odds.ratios}
+\keyword{\textbackslash{}textasciitilde{}kwd2}{odds.ratios}
+%
+\begin{Usage}
+\begin{verbatim}
+odds.ratios(m, type = "local")
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{m}] 
+
+
+\item[\code{type}] 
+
+
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Examples}
+\begin{ExampleCode}
+##---- Should be DIRECTLY executable !! ----
+##-- ==>  Define data, use random,
+##--	or do  help(data=index)  for the standard data sets.
+
+## The function is currently defined as
+function (m, type = "local") 
+{
+    nr <- nrow(m)
+    if (nr < 2) 
+        stop("number of rows is less than two")
+    nc <- ncol(m)
+    if (nc < 2) 
+        stop("number of columns is less than two")
+    if (length(type) > 1) 
+        stop("only one type is allowed")
+    opts <- c("local", "global")
+    type <- pmatch(type, opts)
+    if (is.na(type)) 
+        stop("only \"local\" or \"global\" allowed for type")
+    result <- matrix(NA, nrow = nr - 1, ncol = nc - 1)
+    if (type == 1) 
+        for (i in 1:(nr - 1)) for (j in 1:(nc - 1)) result[i, 
+            j] <- m[i, j] * m[i + 1, j + 1]/(m[i, j + 1] * m[i + 
+            1, j])
+    if (type == 2) 
+        for (i in 1:(nr - 1)) for (j in 1:(nc - 1)) {
+            num <- as.numeric(sum(m[1:i, 1:j])) * as.numeric(sum(m[(i + 
+                1):nr, (j + 1):nc]))
+            den <- as.numeric(sum(m[1:i, (j + 1):nc])) * as.numeric(sum(m[(i + 
+                1):nr, 1:j]))
+            result[i, j] <- num/den
+        }
+    result
+  }
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{plot.local.or}{plotting fourfold plots for odds ratios }{plot.local.or}
+\keyword{\textbackslash{}textasciitilde{}kwd1}{plot.local.or}
+\keyword{\textbackslash{}textasciitilde{}kwd2}{plot.local.or}
+%
+\begin{Usage}
+\begin{verbatim}
+plot.local.or(m, col = c("azure4", "aquamarine4"))
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{m}] 
+
+
+\item[\code{col}] 
+
+
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Examples}
+\begin{ExampleCode}
+##---- Should be DIRECTLY executable !! ----
+##-- ==>  Define data, use random,
+##--	or do  help(data=index)  for the standard data sets.
+
+## The function is currently defined as
+function (m, col = c("azure4", "aquamarine4")) 
+{
+    nr <- nrow(m)
+    if (nr < 2) 
+        stop("number of rows is less than two")
+    nc <- ncol(m)
+    if (nc < 2) 
+        stop("number of columns is less than two")
+    par(mfrow = c(nr - 1, nc - 1))
+    for (i in 1:(nr - 1)) for (j in 1:(nc - 1)) {
+        fourfoldplot(m[i:(i + 1), j:(j + 1)], color = col)
+    }
+  }
+\end{ExampleCode}
+\end{Examples}
+\printindex{}
+\end{document}
