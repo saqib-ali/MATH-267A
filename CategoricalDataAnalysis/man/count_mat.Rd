@@ -5,7 +5,8 @@
 creating contingency matrix for categorical data analysis
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Takes a data frame of at least two observations of two categorical variables 
+  and returns a contingency table of the data 
 }
 \usage{
 count_mat(df)
@@ -13,13 +14,14 @@ count_mat(df)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{df}{
-%%     ~~Describe \code{df} here~~
+df is a data frame with dimentions nx2 of two categorical variablles. 
 }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
+  \item{m}{a contingency matrix of numerical values with dimension kxn where k is the number of categories in the first variable and n is the number of categories in the second variable  }  
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
@@ -30,10 +32,10 @@ count_mat(df)
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Maham Niaz
 }
 \note{
-%%  ~~further notes~~
+works similar to the table() function
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
@@ -46,6 +48,16 @@ count_mat(df)
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
 
+  #create vector 1 with three levels
+  a = c("A","A","B","A", "B","B","C","A","C","B")
+  #create vector 2 with 4 levels
+  b = c(1,2,1,4,1,2,2,3,4,3)
+  # create dataframe with a and b vectors as columns
+  df = cbind(a,b)
+  #return count matrix 
+  m = count_mat(df)
+  m
+  
 ## The function is currently defined as
 function (df) 
 {
