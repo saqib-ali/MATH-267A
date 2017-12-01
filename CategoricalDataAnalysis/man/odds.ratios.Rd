@@ -33,7 +33,7 @@ odds.ratios(m, type = "local")
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Maham Niaz
 }
 \note{
 %%  ~~further notes~~
