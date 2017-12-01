@@ -4,7 +4,6 @@ Title: Categorical Data Analysis
 Version: 1.0
 Date: 2017-11-30
 Author: Maham Niaz, Saqib Ali
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
+Maintainer: Maham Niaz <maham.niaz@sjsu.edu>
+Description: This package is used for analyzing two categorical variables.  
 License: GPL (>= 2)
-
