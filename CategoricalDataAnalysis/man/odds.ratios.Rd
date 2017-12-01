@@ -5,7 +5,8 @@
  creating a table with local or global odds ratios 
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+This function takes in a contingency table and returns local or global odds ratios for all the subtables formed from the table. 
+ The function gives out the odds ratios in the form of n-1 by m-1 matrix.
 }
 \usage{
 odds.ratios(m, type = "local")
@@ -13,16 +14,18 @@ odds.ratios(m, type = "local")
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{m}{
-%%     ~~Describe \code{m} here~~
+The two dimentional contingency table for which all the local and global odds ratios are required
 }
   \item{type}{
-%%     ~~Describe \code{type} here~~
+the type of odds ratios required. This argument can take values local or global only. The default is set to local.
+   Note that global odds ratios make sense for ordinal data for both variables. 
 }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
+ \item{result}{a matrix of odds ratios is returned. The dimentions  of the matrix are n-1 by k-1 where n and k are the number of rows and columns of contingency table m}
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
@@ -48,6 +51,14 @@ Maham Niaz
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
+ #attaching dataset crabs2
+ data("crabs2")
+ # create contingency matrix for variable spine and satelite 
+ m = table(crabs2$spine, crabs2$satellite)
+ or1 = odds.ratios(m, "global")
+ or1 #gives matrix for global odds ratios
+ or2 = odds.ratios(m)
+ or2 #gives matrix for local odds ratios
 
 ## The function is currently defined as
 function (m, type = "local") 
