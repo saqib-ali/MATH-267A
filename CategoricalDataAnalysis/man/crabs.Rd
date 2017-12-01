@@ -2,11 +2,11 @@
 \alias{crabs}
 \docType{data}
 \title{
-contains the data analyzed by Brockmann (1996) and is discussed extensively in Agresti (2002). This is a space-delimited text file in which the variable names appear in the first row.
-Background
+Horseshoe crabs data on characteristics of female crabs. The data includes color spine width weight and the number of satelites attracted by the male and female pair
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of the dataset. ~~
+contains the data analyzed by Brockmann (1996) and is discussed extensively in Agresti (2002). This is a space-delimited text file in which the variable names appear in the first row.
+Background
 }
 \usage{data("crabs")}
 \format{
@@ -23,13 +23,15 @@ Background
 %%  ~~ If necessary, more details than the __description__ above ~~
 }
 \source{
-%%  ~~ reference to a publication or URL from which the data were obtained ~~
+http://www.math.montana.edu/shancock/courses/stat539/data/horseshoe.txt
 }
 \references{
 %%  ~~ possibly secondary sources and usages ~~
 }
 \examples{
 data(crabs)
-## maybe str(crabs) ; plot(crabs) ...
+str(crabs) #gives the summary of the dataset ; 
+plot(crabs) 
+  
 }
 \keyword{datasets}
