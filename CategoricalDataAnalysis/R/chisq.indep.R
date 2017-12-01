@@ -22,8 +22,12 @@ function(m, level = 0.05, digits = 4, print = TRUE) {
         "\n", sep = "")
     cat("  X-squared = ", round(X.sq, digits), "\n", sep = "")
     cat("  G-squared = ", round(G.sq, digits), sep = "")
+    if(X.sq > c.val | G.sq > c.val){
+      cat("\n", sep = "","The test statistic value is greater than critical value. We reject the null hypothesis and conclude that the two variable are not independent")
+    } else {
+      cat("\n", sep = "","The test statistic value is less than critical value. We fail to reject the null hypothesis and conclude that the two variable are independent")
+    }
     
   }
-  invisible(list(X.sq = X.sq, df = df, expected = exp.ct, 
-                 pearson.res = p.res, std.res = s.res))
+  
 }
