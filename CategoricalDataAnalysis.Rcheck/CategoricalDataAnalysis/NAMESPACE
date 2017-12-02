@@ -1,9 +1,8 @@
 exportPattern("^[[:alpha:]]+")
+import(stats)
 export(count_mat)
 export(chisq.indep)
 export(odds.ratios)
 export(plot.local.or)
 export(catbarchart)
 export(continous2categorical)
-
-

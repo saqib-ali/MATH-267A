@@ -59,7 +59,7 @@ flush(stderr()); flush(stdout())
 
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: chisq.indep
-### Title: testing for independence between two categorical variable
+### Title: Testing for independence between two categorical variable
 ### Aliases: chisq.indep
 ### Keywords: ~kwd1 ~kwd2
 
@@ -68,7 +68,15 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
-
+#attach dataset crabs
+  data("crabs2")
+  #create a contingency matrix for crabs color and satelite 
+  m = table(crabs2$color, crabs2$satellite)
+  # returns chi squared test of independence for the two variable, color of the crab and satelite status, which is either TRUE or FALSE 
+  chisq.indep(m)
+  
+  
+  
 ## The function is currently defined as
 function (m, level = 0.05, digits = 4, print = TRUE) 
 {
@@ -91,9 +99,13 @@ function (m, level = 0.05, digits = 4, print = TRUE)
             round(c.val, digits), "\n", sep = "")
         cat("  X-squared = ", round(X.sq, digits), "\n", sep = "")
         cat("  G-squared = ", round(G.sq, digits), sep = "")
+      if(X.sq > c.val | G.sq > c.val){
+      cat("\n", sep = "","The test statistic value is greater than critical value. We reject the null hypothesis and conclude that the two variable are not independent")
+    } else {
+      cat("\n", sep = "","The test statistic value is less than critical value. We fail to reject the null hypothesis and conclude that the two variable are independent")
     }
-    invisible(list(X.sq = X.sq, df = df, expected = exp.ct, pearson.res = p.res, 
-        std.res = s.res))
+    }
+    
   }
 
 
@@ -157,6 +169,16 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
 
+  #create vector 1 with three levels
+  a = c("A","A","B","A", "B","B","C","A","C","B")
+  #create vector 2 with 4 levels
+  b = c(1,2,1,4,1,2,2,3,4,3)
+  # create dataframe with a and b vectors as columns
+  df = cbind(a,b)
+  #return count matrix 
+  m = count_mat(df)
+  m
+  
 ## The function is currently defined as
 function (df) 
 {
@@ -194,16 +216,18 @@ flush(stderr()); flush(stdout())
 
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: crabs
-### Title: contains the data analyzed by Brockmann (1996) and is discussed
-###   extensively in Agresti (2002). This is a space-delimited text file in
-###   which the variable names appear in the first row. Background
+### Title: Horseshoe crabs data on characteristics of female crabs. The
+###   data includes color spine width weight and the number of satelites
+###   attracted by the male and female pair
 ### Aliases: crabs
 ### Keywords: datasets
 
 ### ** Examples
 
 data(crabs)
-## maybe str(crabs) ; plot(crabs) ...
+str(crabs) #gives the summary of the dataset ; 
+plot(crabs) 
+  
 
 
 
@@ -249,6 +273,14 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
+ #attaching dataset crabs2
+ data("crabs2")
+ # create contingency matrix for variable spine and satelite 
+ m = table(crabs2$spine, crabs2$satellite)
+ or1 = odds.ratios(m, "global")
+ or1 #gives matrix for global odds ratios
+ or2 = odds.ratios(m)
+ or2 #gives matrix for local odds ratios
 
 ## The function is currently defined as
 function (m, type = "local") 
@@ -303,6 +335,14 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
 
+  #create 2x2 matrix
+  m = matrix(c(1,5,13,6), nrow=2)
+  plot.local.or(m) # returns a single plot shpwing descriptive summary of odds ratio
+  
+  #create 4x4 matrix
+  m = matrix(c(1,5,13,6,3,5,14,16,36,45,4,6,5,8,9,56), nrow = 4)
+  plot.local.or(m) # returns 3x3 plots for the odds ratios of 2x2 subtables in the m matrix
+  
 ## The function is currently defined as
 function (m, col = c("azure4", "aquamarine4")) 
 {

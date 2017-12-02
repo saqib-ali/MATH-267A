@@ -7,14 +7,20 @@
 * checking extension type ... Package
 * this is package ‘CategoricalDataAnalysis’ version ‘1.0’
 * checking CRAN incoming feasibility ... NOTE
-Maintainer: ‘Who to complain to <yourfault@somewhere.net>’
+Maintainer: ‘Maham Niaz <maham.niaz@sjsu.edu>’
 
 New submission
+
+Unknown, possibly mis-spelled, fields in DESCRIPTION:
+  ‘Exports’
 
 Package has help file(s) containing build-stage \Sexpr{} expressions but no 'build/partial.rdb' file.
 
 Checking URLs failed with message:
 /home/saqib/datascience/SJSUStats/MATH-267A/CategoricalDataAnalysis/man/CategoricalDataAnalysis-package.Rd:6: file './DESCRIPTION' does not exist
+
+The Description field should not start with the package name,
+  'This package' or similar.
 
 The build time stamp is missing.
 * checking package namespace information ... OK
@@ -32,7 +38,6 @@ See ‘/home/saqib/datascience/SJSUStats/MATH-267A/CategoricalDataAnalysis.Rchec
 * checking installed package size ... OK
 * checking package directory ... OK
 * checking DESCRIPTION meta-information ... NOTE
-Malformed Description field: should contain one or more complete sentences.
 Checking should be performed on sources prepared by ‘R CMD build’.
 * checking top-level files ... OK
 * checking for left-over files ... OK
@@ -77,15 +82,13 @@ catbarchart : plot_hist: no visible global function definition for
 catbarchart : plot_hist: no visible global function definition for
   ‘scale_fill_discrete’
 catbarchart: no visible global function definition for ‘grid.arrange’
-chisq.indep: no visible global function definition for ‘qchisq’
 plot.local.or: no visible global function definition for ‘par’
 plot.local.or: no visible global function definition for ‘fourfoldplot’
 Undefined global functions or variables:
-  ..count.. aes fourfoldplot geom_bar ggplot grid.arrange par qchisq
+  ..count.. aes fourfoldplot geom_bar ggplot grid.arrange par
   scale_fill_discrete xlab
 Consider adding
   importFrom("graphics", "fourfoldplot", "par")
-  importFrom("stats", "qchisq")
 to your NAMESPACE file.
 * checking Rd files ... WARNING
 prepare_Rd: CategoricalDataAnalysis-package.Rd:26: All text must be in a section
@@ -98,56 +101,44 @@ prepare_Rd: catbarchart.Rd:32-34: Dropping empty section \author
 prepare_Rd: catbarchart.Rd:29-31: Dropping empty section \references
 prepare_Rd: catbarchart.Rd:41-43: Dropping empty section \seealso
 checkRd: (5) catbarchart.Rd:0-66: Must have a \description
-prepare_Rd: chisq.indep.Rd:7-9: Dropping empty section \description
-prepare_Rd: chisq.indep.Rd:28-30: Dropping empty section \details
-prepare_Rd: chisq.indep.Rd:31-37: Dropping empty section \value
-prepare_Rd: chisq.indep.Rd:44-46: Dropping empty section \note
-prepare_Rd: chisq.indep.Rd:41-43: Dropping empty section \author
-prepare_Rd: chisq.indep.Rd:38-40: Dropping empty section \references
-prepare_Rd: chisq.indep.Rd:50-52: Dropping empty section \seealso
-checkRd: (5) chisq.indep.Rd:0-89: Must have a \description
+prepare_Rd: chisq.indep.Rd:34-36: Dropping empty section \details
+prepare_Rd: chisq.indep.Rd:50-52: Dropping empty section \note
+prepare_Rd: chisq.indep.Rd:44-46: Dropping empty section \references
+prepare_Rd: chisq.indep.Rd:56-58: Dropping empty section \seealso
 prepare_Rd: continous2categorical.Rd:21-23: Dropping empty section \details
 prepare_Rd: continous2categorical.Rd:24-30: Dropping empty section \value
 prepare_Rd: continous2categorical.Rd:37-39: Dropping empty section \note
 prepare_Rd: continous2categorical.Rd:34-36: Dropping empty section \author
 prepare_Rd: continous2categorical.Rd:31-33: Dropping empty section \references
 prepare_Rd: continous2categorical.Rd:43-45: Dropping empty section \seealso
-prepare_Rd: count_mat.Rd:7-9: Dropping empty section \description
-prepare_Rd: count_mat.Rd:19-21: Dropping empty section \details
-prepare_Rd: count_mat.Rd:22-28: Dropping empty section \value
-prepare_Rd: count_mat.Rd:35-37: Dropping empty section \note
-prepare_Rd: count_mat.Rd:32-34: Dropping empty section \author
-prepare_Rd: count_mat.Rd:29-31: Dropping empty section \references
-prepare_Rd: count_mat.Rd:41-43: Dropping empty section \seealso
-checkRd: (5) count_mat.Rd:0-78: Must have a \description
-prepare_Rd: crabs.Rd:8-10: Dropping empty section \description
+prepare_Rd: count_mat.Rd:20-22: Dropping empty section \details
+prepare_Rd: count_mat.Rd:31-33: Dropping empty section \references
+prepare_Rd: count_mat.Rd:43-45: Dropping empty section \seealso
 prepare_Rd: crabs.Rd:22-24: Dropping empty section \details
-prepare_Rd: crabs.Rd:25-27: Dropping empty section \source
 prepare_Rd: crabs.Rd:28-30: Dropping empty section \references
-checkRd: (5) crabs.Rd:0-36: Must have a \description
 prepare_Rd: crabs2.Rd:10-12: Dropping empty section \description
 prepare_Rd: crabs2.Rd:24-26: Dropping empty section \details
 prepare_Rd: crabs2.Rd:27-29: Dropping empty section \source
 prepare_Rd: crabs2.Rd:30-32: Dropping empty section \references
 checkRd: (5) crabs2.Rd:0-38: Must have a \description
-prepare_Rd: odds.ratios.Rd:7-9: Dropping empty section \description
-prepare_Rd: odds.ratios.Rd:22-24: Dropping empty section \details
-prepare_Rd: odds.ratios.Rd:25-31: Dropping empty section \value
-prepare_Rd: odds.ratios.Rd:38-40: Dropping empty section \note
-prepare_Rd: odds.ratios.Rd:35-37: Dropping empty section \author
-prepare_Rd: odds.ratios.Rd:32-34: Dropping empty section \references
-prepare_Rd: odds.ratios.Rd:44-46: Dropping empty section \seealso
-checkRd: (5) odds.ratios.Rd:0-87: Must have a \description
-prepare_Rd: plot.local.or.Rd:7-9: Dropping empty section \description
-prepare_Rd: plot.local.or.Rd:22-24: Dropping empty section \details
-prepare_Rd: plot.local.or.Rd:25-31: Dropping empty section \value
-prepare_Rd: plot.local.or.Rd:38-40: Dropping empty section \note
-prepare_Rd: plot.local.or.Rd:35-37: Dropping empty section \author
-prepare_Rd: plot.local.or.Rd:32-34: Dropping empty section \references
-prepare_Rd: plot.local.or.Rd:44-46: Dropping empty section \seealso
-checkRd: (5) plot.local.or.Rd:0-71: Must have a \description
+prepare_Rd: odds.ratios.Rd:24-26: Dropping empty section \details
+prepare_Rd: odds.ratios.Rd:41-43: Dropping empty section \note
+prepare_Rd: odds.ratios.Rd:35-37: Dropping empty section \references
+prepare_Rd: odds.ratios.Rd:47-49: Dropping empty section \seealso
+prepare_Rd: plot.local.or.Rd:24-26: Dropping empty section \details
+prepare_Rd: plot.local.or.Rd:27-33: Dropping empty section \value
+prepare_Rd: plot.local.or.Rd:40-42: Dropping empty section \note
+prepare_Rd: plot.local.or.Rd:34-36: Dropping empty section \references
+prepare_Rd: plot.local.or.Rd:46-48: Dropping empty section \seealso
 * checking Rd metadata ... OK
-* checking Rd line widths ... OK
+* checking Rd line widths ... NOTE
+Rd file 'chisq.indep.Rd':
+  \examples lines wider than 100 characters:
+       # returns chi squared test of independence for the two variable, color of the crab and satelite status, which is either TRUE or FALSE ... [TRUNCATED]
+           cat("\n", sep = "","The test statistic value is greater than critical value. We reject the null hypothesis and conclude that the  ... [TRUNCATED]
+           cat("\n", sep = "","The test statistic value is less than critical value. We fail to reject the null hypothesis and conclude that ... [TRUNCATED]
+
+These lines will be truncated in the PDF manual.
 * checking Rd cross-references ... WARNING
 Unknown package ‘<pkg>’ in Rd xrefs
 * checking for missing documentation entries ... OK
@@ -171,4 +162,4 @@ LaTeX errors when creating PDF version.
 This typically indicates Rd problems.
 * checking PDF version of manual without hyperrefs or index ... OK
 * DONE
-Status: 5 WARNINGs, 4 NOTEs
+Status: 5 WARNINGs, 5 NOTEs

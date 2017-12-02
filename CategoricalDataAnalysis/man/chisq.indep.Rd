@@ -61,7 +61,7 @@ Maham Niaz
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
 #attach dataset crabs
-  data("crabs")
+  data("crabs2")
   #create a contingency matrix for crabs color and satelite 
   m = table(crabs2$color, crabs2$satellite)
   # returns chi squared test of independence for the two variable, color of the crab and satelite status, which is either TRUE or FALSE 

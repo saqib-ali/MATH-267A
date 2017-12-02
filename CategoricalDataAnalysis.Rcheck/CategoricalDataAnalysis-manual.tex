@@ -18,9 +18,10 @@
 \item[Version]\AsIs{1.0}
 \item[Date]\AsIs{2017-11-30}
 \item[Author]\AsIs{Maham Niaz, Saqib Ali}
-\item[Maintainer]\AsIs{Who to complain to }\email{yourfault@somewhere.net}\AsIs{}
-\item[Description]\AsIs{More about what it does (maybe more than one line)}
+\item[Maintainer]\AsIs{Maham Niaz }\email{maham.niaz@sjsu.edu}\AsIs{}
+\item[Description]\AsIs{This package is used for analyzing two categorical variables.}
 \item[License]\AsIs{GPL (>= 2)}
+\item[Exports]\AsIs{count\_mat, plot.local.or, chisq.indep, odds.ratios,}
 \end{description}
 \Rdcontents{\R{} topics documented:}
 \inputencoding{utf8}
@@ -29,7 +30,7 @@
 \keyword{package}{CategoricalDataAnalysis-package}
 %
 \begin{Description}\relax
-More about what it does (maybe more than one line)
+This package is used for analyzing two categorical variables.  
 \end{Description}
 %
 \begin{Details}\relax
@@ -44,7 +45,7 @@ Index:  This package was not yet installed at build time.\\{}
 \begin{Author}\relax
 Maham Niaz, Saqib Ali
 
-Maintainer: Who to complain to <yourfault@somewhere.net>
+Maintainer: Maham Niaz <maham.niaz@sjsu.edu>
 \end{Author}
 %
 \begin{References}\relax
@@ -95,9 +96,14 @@ function (x)
 \end{ExampleCode}
 \end{Examples}
 \inputencoding{utf8}
-\HeaderA{chisq.indep}{testing for independence between two categorical variable  }{chisq.indep}
+\HeaderA{chisq.indep}{Testing for independence between two categorical variable  }{chisq.indep}
 \keyword{\textbackslash{}textasciitilde{}kwd1}{chisq.indep}
 \keyword{\textbackslash{}textasciitilde{}kwd2}{chisq.indep}
+%
+\begin{Description}\relax
+This function takes in contingency matrix and tests for Chi Squared Independence. The function returns the two test statistics. 
+X\textasciicircum{}2 and G\textasciicircum{}2, which is Pearson test statistic and Likelihood Ratio test statistic respectively.    
+\end{Description}
 %
 \begin{Usage}
 \begin{verbatim}
@@ -108,26 +114,53 @@ chisq.indep(m, level = 0.05, digits = 4, print = TRUE)
 \begin{Arguments}
 \begin{ldescription}
 \item[\code{m}] 
-
+m is an at least two by two matrix or the contingency matrix. Preferably with rows corresponding to explanatory variable
+and coulmns corresponding to response variable.  
 
 \item[\code{level}] 
-
+level is the significance level of the test. 
+The null hypothesis is rejected if the p-value is less than a predetermined level, alpha. 
+alpha is called the significance level, and is the probability of rejecting the null hypothesis given that it is true (a type I error). 
+The default value is set to 0.05. 
 
 \item[\code{digits}] 
-
+integer indicating the number of decimal places or significant digits to be used. The default is set to 4.  
 
 \item[\code{print}] 
-
+Default is set to TRUE. If print is set to TRUE the output of the test gets printed. 
+If you do not want to see the output, set it equal to FALSE.
 
 \end{ldescription}
 \end{Arguments}
+%
+\begin{Value}
+\begin{ldescription}
+\item[\code{}] If print is set to TRUE returns the value of level, degree of freedom, critical value rounded to the neares digit, value of pearson statistic and value of likelihood ratio test statistic
+\end{ldescription}
+
+
+
+
+\end{Value}
+%
+\begin{Author}\relax
+Maham Niaz
+\end{Author}
 %
 \begin{Examples}
 \begin{ExampleCode}
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
-
+#attach dataset crabs
+  data("crabs2")
+  #create a contingency matrix for crabs color and satelite 
+  m = table(crabs2$color, crabs2$satellite)
+  # returns chi squared test of independence for the two variable, color of the crab and satelite status, which is either TRUE or FALSE 
+  chisq.indep(m)
+  
+  
+  
 ## The function is currently defined as
 function (m, level = 0.05, digits = 4, print = TRUE) 
 {
@@ -150,9 +183,13 @@ function (m, level = 0.05, digits = 4, print = TRUE)
             round(c.val, digits), "\n", sep = "")
         cat("  X-squared = ", round(X.sq, digits), "\n", sep = "")
         cat("  G-squared = ", round(G.sq, digits), sep = "")
+      if(X.sq > c.val | G.sq > c.val){
+      cat("\n", sep = "","The test statistic value is greater than critical value. We reject the null hypothesis and conclude that the two variable are not independent")
+    } else {
+      cat("\n", sep = "","The test statistic value is less than critical value. We fail to reject the null hypothesis and conclude that the two variable are independent")
     }
-    invisible(list(X.sq = X.sq, df = df, expected = exp.ct, pearson.res = p.res, 
-        std.res = s.res))
+    }
+    
   }
 \end{ExampleCode}
 \end{Examples}
@@ -210,6 +247,11 @@ function (x)
 \keyword{\textbackslash{}textasciitilde{}kwd1}{count\_mat}
 \keyword{\textbackslash{}textasciitilde{}kwd2}{count\_mat}
 %
+\begin{Description}\relax
+Takes a data frame of at least two observations of two categorical variables 
+and returns a contingency table of the data 
+\end{Description}
+%
 \begin{Usage}
 \begin{verbatim}
 count_mat(df)
@@ -219,10 +261,29 @@ count_mat(df)
 \begin{Arguments}
 \begin{ldescription}
 \item[\code{df}] 
-
+df is a data frame with dimentions nx2 of two categorical variablles. 
 
 \end{ldescription}
 \end{Arguments}
+%
+\begin{Value}
+\begin{ldescription}
+\item[\code{m}] a contingency matrix of numerical values with dimension kxn where k is the number of categories in the first variable and n is the number of categories in the second variable   
+\end{ldescription}
+
+
+
+
+
+\end{Value}
+%
+\begin{Note}\relax
+works similar to the table() function
+\end{Note}
+%
+\begin{Author}\relax
+Maham Niaz
+\end{Author}
 %
 \begin{Examples}
 \begin{ExampleCode}
@@ -230,6 +291,16 @@ count_mat(df)
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
 
+  #create vector 1 with three levels
+  a = c("A","A","B","A", "B","B","C","A","C","B")
+  #create vector 2 with 4 levels
+  b = c(1,2,1,4,1,2,2,3,4,3)
+  # create dataframe with a and b vectors as columns
+  df = cbind(a,b)
+  #return count matrix 
+  m = count_mat(df)
+  m
+  
 ## The function is currently defined as
 function (df) 
 {
@@ -257,8 +328,13 @@ function (df)
 \end{ExampleCode}
 \end{Examples}
 \inputencoding{utf8}
-\HeaderA{crabs}{contains the data analyzed by Brockmann (1996) and is discussed extensively in Agresti (2002). This is a space-delimited text file in which the variable names appear in the first row. Background}{crabs}
+\HeaderA{crabs}{Horseshoe crabs data on characteristics of female crabs. The data includes color spine width weight and the number of satelites attracted by the male and female pair}{crabs}
 \keyword{datasets}{crabs}
+%
+\begin{Description}\relax
+contains the data analyzed by Brockmann (1996) and is discussed extensively in Agresti (2002). This is a space-delimited text file in which the variable names appear in the first row.
+Background
+\end{Description}
 %
 \begin{Usage}
 \begin{verbatim}
@@ -280,10 +356,16 @@ A data frame with 174 observations on the following 5 variables.
 
 \end{Format}
 %
+\begin{Source}\relax
+http://www.math.montana.edu/shancock/courses/stat539/data/horseshoe.txt
+\end{Source}
+%
 \begin{Examples}
 \begin{ExampleCode}
 data(crabs)
-## maybe str(crabs) ; plot(crabs) ...
+str(crabs) #gives the summary of the dataset ; 
+plot(crabs) 
+  
 \end{ExampleCode}
 \end{Examples}
 \inputencoding{utf8}
@@ -321,6 +403,11 @@ data(crabs2)
 \keyword{\textbackslash{}textasciitilde{}kwd1}{odds.ratios}
 \keyword{\textbackslash{}textasciitilde{}kwd2}{odds.ratios}
 %
+\begin{Description}\relax
+This function takes in a contingency table and returns local or global odds ratios for all the subtables formed from the table. 
+The function gives out the odds ratios in the form of n-1 by m-1 matrix.
+\end{Description}
+%
 \begin{Usage}
 \begin{verbatim}
 odds.ratios(m, type = "local")
@@ -330,19 +417,43 @@ odds.ratios(m, type = "local")
 \begin{Arguments}
 \begin{ldescription}
 \item[\code{m}] 
-
+The two dimentional contingency table for which all the local and global odds ratios are required
 
 \item[\code{type}] 
-
+the type of odds ratios required. This argument can take values local or global only. The default is set to local.
+Note that global odds ratios make sense for ordinal data for both variables. 
 
 \end{ldescription}
 \end{Arguments}
+%
+\begin{Value}
+\begin{ldescription}
+\item[\code{result}] a matrix of odds ratios is returned. The dimentions  of the matrix are n-1 by k-1 where n and k are the number of rows and columns of contingency table m
+\end{ldescription}
+
+
+
+
+
+\end{Value}
+%
+\begin{Author}\relax
+Maham Niaz
+\end{Author}
 %
 \begin{Examples}
 \begin{ExampleCode}
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
+ #attaching dataset crabs2
+ data("crabs2")
+ # create contingency matrix for variable spine and satelite 
+ m = table(crabs2$spine, crabs2$satellite)
+ or1 = odds.ratios(m, "global")
+ or1 #gives matrix for global odds ratios
+ or2 = odds.ratios(m)
+ or2 #gives matrix for local odds ratios
 
 ## The function is currently defined as
 function (m, type = "local") 
@@ -381,6 +492,11 @@ function (m, type = "local")
 \keyword{\textbackslash{}textasciitilde{}kwd1}{plot.local.or}
 \keyword{\textbackslash{}textasciitilde{}kwd2}{plot.local.or}
 %
+\begin{Description}\relax
+This function takes in a contingency table and returns (k-1)(l-1) fourfold plots for odds ratio of all 2x2 subtables in the matrix 
+m with dimentions kxl 
+\end{Description}
+%
 \begin{Usage}
 \begin{verbatim}
 plot.local.or(m, col = c("azure4", "aquamarine4"))
@@ -390,13 +506,18 @@ plot.local.or(m, col = c("azure4", "aquamarine4"))
 \begin{Arguments}
 \begin{ldescription}
 \item[\code{m}] 
-
+a two dimentional contingency matrix
 
 \item[\code{col}] 
-
+The color of the four-fold plots. The default is azure4 and aquamarine4. The second color corresponds to the 
+variable with higher odds of success.
 
 \end{ldescription}
 \end{Arguments}
+%
+\begin{Author}\relax
+Maham Niaz
+\end{Author}
 %
 \begin{Examples}
 \begin{ExampleCode}
@@ -404,6 +525,14 @@ plot.local.or(m, col = c("azure4", "aquamarine4"))
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
 
+  #create 2x2 matrix
+  m = matrix(c(1,5,13,6), nrow=2)
+  plot.local.or(m) # returns a single plot shpwing descriptive summary of odds ratio
+  
+  #create 4x4 matrix
+  m = matrix(c(1,5,13,6,3,5,14,16,36,45,4,6,5,8,9,56), nrow = 4)
+  plot.local.or(m) # returns 3x3 plots for the odds ratios of 2x2 subtables in the m matrix
+  
 ## The function is currently defined as
 function (m, col = c("azure4", "aquamarine4")) 
 {

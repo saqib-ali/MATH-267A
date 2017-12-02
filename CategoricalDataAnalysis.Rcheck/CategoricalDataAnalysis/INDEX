@@ -1,16 +1,15 @@
 CategoricalDataAnalysis-package
                         Categorical Data Analysis
 catbarchart             Plot Barchart for Categorical Data
-chisq.indep             testing for independence between two
+chisq.indep             Testing for independence between two
                         categorical variable
 continous2categorical   continous2categorical function.
 count_mat               creating contingency matrix for categorical
                         data analysis
-crabs                   contains the data analyzed by Brockmann (1996)
-                        and is discussed extensively in Agresti (2002).
-                        This is a space-delimited text file in which
-                        the variable names appear in the first row.
-                        Background
+crabs                   Horseshoe crabs data on characteristics of
+                        female crabs. The data includes color spine
+                        width weight and the number of satelites
+                        attracted by the male and female pair
 crabs2                  contains the data analyzed by Brockmann (1996)
                         and is discussed extensively in Agresti (2002).
                         This is a space-delimited text file in which

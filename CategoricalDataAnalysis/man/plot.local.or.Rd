@@ -52,7 +52,7 @@ Maham Niaz
 ##--	or do  help(data=index)  for the standard data sets.
 
   #create 2x2 matrix
-  m = matrix(c(1,5,13,6))
+  m = matrix(c(1,5,13,6), nrow=2)
   plot.local.or(m) # returns a single plot shpwing descriptive summary of odds ratio
   
   #create 4x4 matrix
