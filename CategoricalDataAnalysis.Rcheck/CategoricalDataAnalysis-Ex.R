@@ -323,15 +323,15 @@ function (m, type = "local")
 base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
 base::cat("odds.ratios", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
-nameEx("plot.local.or")
-### * plot.local.or
+nameEx("plotlocalor")
+### * plotlocalor
 
 flush(stderr()); flush(stdout())
 
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
-### Name: plot.local.or
+### Name: plotlocalor
 ### Title: plotting fourfold plots for odds ratios
-### Aliases: plot.local.or
+### Aliases: plotlocalor
 ### Keywords: ~kwd1 ~kwd2
 
 ### ** Examples
@@ -342,11 +342,11 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
   #create 2x2 matrix
   m = matrix(c(1,5,13,6), nrow=2)
-  plot.local.or(m) # returns a single plot shpwing descriptive summary of odds ratio
+  plotlocalor(m) # returns a single plot shpwing descriptive summary of odds ratio
   
   #create 4x4 matrix
   m = matrix(c(1,5,13,6,3,5,14,16,36,45,4,6,5,8,9,56), nrow = 4)
-  plot.local.or(m) # returns 3x3 plots for the odds ratios of 2x2 subtables in the m matrix
+  plotlocalor(m) # returns 3x3 plots for the odds ratios of 2x2 subtables in the m matrix
   
 ## The function is currently defined as
 function (m, col = c("azure4", "aquamarine4")) 
@@ -366,7 +366,7 @@ function (m, col = c("azure4", "aquamarine4"))
 
 
 base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
-base::cat("plot.local.or", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+base::cat("plotlocalor", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 graphics::par(get("par.postscript", pos = 'CheckExEnv'))
 ### * <FOOTER>
 ###

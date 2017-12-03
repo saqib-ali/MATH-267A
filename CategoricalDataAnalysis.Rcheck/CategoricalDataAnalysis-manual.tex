@@ -21,8 +21,8 @@
 \item[Maintainer]\AsIs{Maham Niaz }\email{maham.niaz@sjsu.edu}\AsIs{}
 \item[Description]\AsIs{This package is used for analyzing two categorical variables.}
 \item[License]\AsIs{GPL (>= 2)}
-\item[Exports]\AsIs{count\_mat, plot.local.or, chisq.indep, odds.ratios,
-catbarchart, continous2categorical}
+\item[Exports]\AsIs{count\_mat, plotlocalor, chisq.indep, odds.ratios, catbarchart,
+continous2categorical}
 \item[Imports]\AsIs{ggplot2, gridExtra}
 \end{description}
 \Rdcontents{\R{} topics documented:}
@@ -495,9 +495,9 @@ function (m, type = "local")
 \end{ExampleCode}
 \end{Examples}
 \inputencoding{utf8}
-\HeaderA{plot.local.or}{plotting fourfold plots for odds ratios }{plot.local.or}
-\keyword{\textbackslash{}textasciitilde{}kwd1}{plot.local.or}
-\keyword{\textbackslash{}textasciitilde{}kwd2}{plot.local.or}
+\HeaderA{plotlocalor}{plotting fourfold plots for odds ratios }{plotlocalor}
+\keyword{\textbackslash{}textasciitilde{}kwd1}{plotlocalor}
+\keyword{\textbackslash{}textasciitilde{}kwd2}{plotlocalor}
 %
 \begin{Description}\relax
 This function takes in a contingency table and returns (k-1)(l-1) fourfold plots for odds ratio of all 2x2 subtables in the matrix 
@@ -506,7 +506,7 @@ m with dimentions kxl
 %
 \begin{Usage}
 \begin{verbatim}
-plot.local.or(m, col = c("azure4", "aquamarine4"))
+plotlocalor(m, col = c("azure4", "aquamarine4"))
 \end{verbatim}
 \end{Usage}
 %
@@ -534,11 +534,11 @@ Maham Niaz
 
   #create 2x2 matrix
   m = matrix(c(1,5,13,6), nrow=2)
-  plot.local.or(m) # returns a single plot shpwing descriptive summary of odds ratio
+  plotlocalor(m) # returns a single plot shpwing descriptive summary of odds ratio
   
   #create 4x4 matrix
   m = matrix(c(1,5,13,6,3,5,14,16,36,45,4,6,5,8,9,56), nrow = 4)
-  plot.local.or(m) # returns 3x3 plots for the odds ratios of 2x2 subtables in the m matrix
+  plotlocalor(m) # returns 3x3 plots for the odds ratios of 2x2 subtables in the m matrix
   
 ## The function is currently defined as
 function (m, col = c("azure4", "aquamarine4")) 

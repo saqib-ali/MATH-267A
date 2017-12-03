@@ -7,5 +7,5 @@ Author: Maham Niaz, Saqib Ali
 Maintainer: Maham Niaz <maham.niaz@sjsu.edu>
 Description: This package is used for analyzing two categorical variables.  
 License: GPL (>= 2)
-Exports: count_mat, plot.local.or, chisq.indep, odds.ratios,  catbarchart, continous2categorical
+Exports: count_mat, plotlocalor, chisq.indep, odds.ratios,  catbarchart, continous2categorical
 Imports: ggplot2, gridExtra

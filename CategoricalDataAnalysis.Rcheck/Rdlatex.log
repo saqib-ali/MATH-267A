@@ -79,13 +79,13 @@ Overfull \hbox (25.98041pt too wide) in paragraph at lines 487--487
  []            \T1/pcr/m/n/9 den <- as.numeric(sum(m[1:i, (j + 1):nc])) * as.nu
 meric(sum(m[(i +[] 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [9]
-Overfull \hbox (58.38037pt too wide) in paragraph at lines 535--535
- []  \T1/pcr/m/n/9 plot.local.or(m) # returns a single plot shpwing descriptive
- summary of odds ratio[] 
+Overfull \hbox (47.58038pt too wide) in paragraph at lines 535--535
+ []  \T1/pcr/m/n/9 plotlocalor(m) # returns a single plot shpwing descriptive s
+ummary of odds ratio[] 
 
-Overfull \hbox (96.18033pt too wide) in paragraph at lines 539--539
- []  \T1/pcr/m/n/9 plot.local.or(m) # returns 3x3 plots for the odds ratios of 
-2x2 subtables in the m matrix[] 
+Overfull \hbox (85.38034pt too wide) in paragraph at lines 539--539
+ []  \T1/pcr/m/n/9 plotlocalor(m) # returns 3x3 plots for the odds ratios of 2x
+2 subtables in the m matrix[] 
 [10] (./Rd2.aux) )
 (see the transcript file for additional information){/usr/share/texlive/texmf-d
 ist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/
@@ -94,7 +94,7 @@ courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
 are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (10 pages, 87960 bytes).
+Output written on Rd2.pdf (10 pages, 87958 bytes).
 Transcript written on Rd2.log.
 This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex)
  restricted \write18 enabled.
@@ -174,13 +174,13 @@ Overfull \hbox (25.98041pt too wide) in paragraph at lines 487--487
  []            \T1/pcr/m/n/9 den <- as.numeric(sum(m[1:i, (j + 1):nc])) * as.nu
 meric(sum(m[(i +[] 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [9]
-Overfull \hbox (58.38037pt too wide) in paragraph at lines 535--535
- []  \T1/pcr/m/n/9 plot.local.or(m) # returns a single plot shpwing descriptive
- summary of odds ratio[] 
+Overfull \hbox (47.58038pt too wide) in paragraph at lines 535--535
+ []  \T1/pcr/m/n/9 plotlocalor(m) # returns a single plot shpwing descriptive s
+ummary of odds ratio[] 
 
-Overfull \hbox (96.18033pt too wide) in paragraph at lines 539--539
- []  \T1/pcr/m/n/9 plot.local.or(m) # returns 3x3 plots for the odds ratios of 
-2x2 subtables in the m matrix[] 
+Overfull \hbox (85.38034pt too wide) in paragraph at lines 539--539
+ []  \T1/pcr/m/n/9 plotlocalor(m) # returns 3x3 plots for the odds ratios of 2x
+2 subtables in the m matrix[] 
 [10] (./Rd2.aux) )
 (see the transcript file for additional information){/usr/share/texlive/texmf-d
 ist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/
@@ -189,8 +189,8 @@ courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
 are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (10 pages, 88043 bytes).
+Output written on Rd2.pdf (10 pages, 88041 bytes).
 Transcript written on Rd2.log.
 Saving output to ‘CategoricalDataAnalysis-manual.pdf’ ...
 Done
-You may want to clean up by 'rm -rf /tmp/RtmpUb2NwF/Rd2pdf62f8497061e7'
+You may want to clean up by 'rm -rf /tmp/Rtmp5s2SXp/Rd2pdf78b5694618fa'

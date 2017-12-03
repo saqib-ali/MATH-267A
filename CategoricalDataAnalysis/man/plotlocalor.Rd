@@ -1,5 +1,5 @@
-\name{plot.local.or}
-\alias{plot.local.or}
+\name{plotlocalor}
+\alias{plotlocalor}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 plotting fourfold plots for odds ratios 
@@ -9,7 +9,7 @@ This function takes in a contingency table and returns (k-1)(l-1) fourfold plots
   m with dimentions kxl 
 }
 \usage{
-plot.local.or(m, col = c("azure4", "aquamarine4"))
+plotlocalor(m, col = c("azure4", "aquamarine4"))
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -53,11 +53,11 @@ Maham Niaz
 
   #create 2x2 matrix
   m = matrix(c(1,5,13,6), nrow=2)
-  plot.local.or(m) # returns a single plot shpwing descriptive summary of odds ratio
+  plotlocalor(m) # returns a single plot shpwing descriptive summary of odds ratio
   
   #create 4x4 matrix
   m = matrix(c(1,5,13,6,3,5,14,16,36,45,4,6,5,8,9,56), nrow = 4)
-  plot.local.or(m) # returns 3x3 plots for the odds ratios of 2x2 subtables in the m matrix
+  plotlocalor(m) # returns 3x3 plots for the odds ratios of 2x2 subtables in the m matrix
   
 ## The function is currently defined as
 function (m, col = c("azure4", "aquamarine4")) 

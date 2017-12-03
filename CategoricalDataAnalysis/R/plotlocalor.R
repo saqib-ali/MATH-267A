@@ -1,4 +1,4 @@
-plot.local.or <-
+plotlocalor <-
 function(m, col = c("azure4", "aquamarine4")) {
   nr <- nrow(m)
   if (nr < 2) stop("number of rows is less than two")
