@@ -14,14 +14,13 @@ continous2categorical(x)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
-}
+  \item{x}{A dataframe with Continous Variables for Factors. Last column is the Response Variable}
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
+A Dataframe with the Categorical variables. Last colums is the Response variable
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}

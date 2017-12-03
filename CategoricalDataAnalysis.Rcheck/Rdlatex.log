@@ -72,21 +72,21 @@ n critical value. We fail to reject the null hypothesis and conclude that the t
 wo variable are independent")[] 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [4]
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [5] [6]
-(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [7]
-(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [8]
-Overfull \hbox (25.98041pt too wide) in paragraph at lines 498--498
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [8] [9]
+Overfull \hbox (25.98041pt too wide) in paragraph at lines 505--505
  []            \T1/pcr/m/n/9 den <- as.numeric(sum(m[1:i, (j + 1):nc])) * as.nu
 meric(sum(m[(i +[] 
-(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [9]
-Overfull \hbox (47.58038pt too wide) in paragraph at lines 546--546
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (47.58038pt too wide) in paragraph at lines 553--553
  []  \T1/pcr/m/n/9 plotlocalor(m) # returns a single plot shpwing descriptive s
 ummary of odds ratio[] 
 
-Overfull \hbox (85.38034pt too wide) in paragraph at lines 550--550
+Overfull \hbox (85.38034pt too wide) in paragraph at lines 557--557
  []  \T1/pcr/m/n/9 plotlocalor(m) # returns 3x3 plots for the odds ratios of 2x
 2 subtables in the m matrix[] 
-[10] (./Rd2.aux) )
+[10] [11] (./Rd2.aux) )
 (see the transcript file for additional information){/usr/share/texlive/texmf-d
 ist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/
 courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
@@ -94,7 +94,7 @@ courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
 are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (10 pages, 88062 bytes).
+Output written on Rd2.pdf (11 pages, 88584 bytes).
 Transcript written on Rd2.log.
 This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex)
  restricted \write18 enabled.
@@ -170,15 +170,15 @@ wo variable are independent")[]
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [7]
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [8] [9]
-Overfull \hbox (25.98041pt too wide) in paragraph at lines 498--498
+Overfull \hbox (25.98041pt too wide) in paragraph at lines 505--505
  []            \T1/pcr/m/n/9 den <- as.numeric(sum(m[1:i, (j + 1):nc])) * as.nu
 meric(sum(m[(i +[] 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [10]
-Overfull \hbox (47.58038pt too wide) in paragraph at lines 546--546
+Overfull \hbox (47.58038pt too wide) in paragraph at lines 553--553
  []  \T1/pcr/m/n/9 plotlocalor(m) # returns a single plot shpwing descriptive s
 ummary of odds ratio[] 
 
-Overfull \hbox (85.38034pt too wide) in paragraph at lines 550--550
+Overfull \hbox (85.38034pt too wide) in paragraph at lines 557--557
  []  \T1/pcr/m/n/9 plotlocalor(m) # returns 3x3 plots for the odds ratios of 2x
 2 subtables in the m matrix[] 
 [11] (./Rd2.aux) )
@@ -189,8 +189,8 @@ courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
 are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (11 pages, 88773 bytes).
+Output written on Rd2.pdf (11 pages, 88901 bytes).
 Transcript written on Rd2.log.
 Saving output to ‘CategoricalDataAnalysis-manual.pdf’ ...
 Done
-You may want to clean up by 'rm -rf /tmp/Rtmpam2BZH/Rd2pdf80a46a74e63'
+You may want to clean up by 'rm -rf /tmp/RtmpG0xVFQ/Rd2pdfcc55aa05d31'

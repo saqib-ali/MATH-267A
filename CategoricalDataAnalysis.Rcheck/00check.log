@@ -79,12 +79,11 @@ prepare_Rd: chisq.indep.Rd:34-36: Dropping empty section \details
 prepare_Rd: chisq.indep.Rd:50-52: Dropping empty section \note
 prepare_Rd: chisq.indep.Rd:44-46: Dropping empty section \references
 prepare_Rd: chisq.indep.Rd:56-58: Dropping empty section \seealso
-prepare_Rd: continous2categorical.Rd:21-23: Dropping empty section \details
-prepare_Rd: continous2categorical.Rd:24-30: Dropping empty section \value
-prepare_Rd: continous2categorical.Rd:37-39: Dropping empty section \note
-prepare_Rd: continous2categorical.Rd:34-36: Dropping empty section \author
-prepare_Rd: continous2categorical.Rd:31-33: Dropping empty section \references
-prepare_Rd: continous2categorical.Rd:43-45: Dropping empty section \seealso
+prepare_Rd: continous2categorical.Rd:19-21: Dropping empty section \details
+prepare_Rd: continous2categorical.Rd:36-38: Dropping empty section \note
+prepare_Rd: continous2categorical.Rd:33-35: Dropping empty section \author
+prepare_Rd: continous2categorical.Rd:30-32: Dropping empty section \references
+prepare_Rd: continous2categorical.Rd:42-44: Dropping empty section \seealso
 prepare_Rd: count_mat.Rd:20-22: Dropping empty section \details
 prepare_Rd: count_mat.Rd:31-33: Dropping empty section \references
 prepare_Rd: count_mat.Rd:43-45: Dropping empty section \seealso

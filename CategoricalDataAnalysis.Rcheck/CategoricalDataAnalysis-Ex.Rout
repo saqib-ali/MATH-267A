@@ -728,7 +728,7 @@ function (m, col = c("azure4", "aquamarine4"))
 > ###
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  3.83 0.044 3.873 0 0 
+Time elapsed:  3.779 0.031 3.81 0 0 
 > grDevices::dev.off()
 null device 
           1 
