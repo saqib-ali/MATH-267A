@@ -20,7 +20,6 @@ continous2categorical <- function(x){
   colnames(out)<-colnames(x)
   return(data.frame(out))
 }
-debug(continous2categorical)
 
 
 
