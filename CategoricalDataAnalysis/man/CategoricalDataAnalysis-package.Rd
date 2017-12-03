@@ -30,5 +30,8 @@ Maintainer: \packageMaintainer{CategoricalDataAnalysis}
 ~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
 }
 \examples{
-%%~~ simple examples of the most important functions ~~
+
+data("crabs2")
+catbarchart(continous2categorical(crabs2))
+
 }

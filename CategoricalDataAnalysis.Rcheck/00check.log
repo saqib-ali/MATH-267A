@@ -68,15 +68,13 @@ Consider adding
 to your NAMESPACE file.
 * checking Rd files ... WARNING
 prepare_Rd: CategoricalDataAnalysis-package.Rd:26: All text must be in a section
-prepare_Rd: CategoricalDataAnalysis-package.Rd:32-34: Dropping empty section \examples
 prepare_Rd: catbarchart.Rd:7-9: Dropping empty section \description
-prepare_Rd: catbarchart.Rd:19-21: Dropping empty section \details
-prepare_Rd: catbarchart.Rd:22-28: Dropping empty section \value
-prepare_Rd: catbarchart.Rd:35-37: Dropping empty section \note
-prepare_Rd: catbarchart.Rd:32-34: Dropping empty section \author
-prepare_Rd: catbarchart.Rd:29-31: Dropping empty section \references
-prepare_Rd: catbarchart.Rd:41-43: Dropping empty section \seealso
-checkRd: (5) catbarchart.Rd:0-71: Must have a \description
+prepare_Rd: catbarchart.Rd:17-19: Dropping empty section \details
+prepare_Rd: catbarchart.Rd:20-26: Dropping empty section \value
+prepare_Rd: catbarchart.Rd:33-35: Dropping empty section \note
+prepare_Rd: catbarchart.Rd:27-29: Dropping empty section \references
+prepare_Rd: catbarchart.Rd:39-41: Dropping empty section \seealso
+checkRd: (5) catbarchart.Rd:0-69: Must have a \description
 prepare_Rd: chisq.indep.Rd:34-36: Dropping empty section \details
 prepare_Rd: chisq.indep.Rd:50-52: Dropping empty section \note
 prepare_Rd: chisq.indep.Rd:44-46: Dropping empty section \references

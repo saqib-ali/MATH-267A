@@ -36,6 +36,29 @@ Type 'q()' to quit R.
 > 
 > base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
 > cleanEx()
+> nameEx("CategoricalDataAnalysis-package")
+> ### * CategoricalDataAnalysis-package
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: CategoricalDataAnalysis-package
+> ### Title: Categorical Data Analysis
+> ### Aliases: CategoricalDataAnalysis-package CategoricalDataAnalysis
+> ### Keywords: package
+> 
+> ### ** Examples
+> 
+> 
+> data("crabs2")
+> catbarchart(continous2categorical(crabs2))
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("CategoricalDataAnalysis-package", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
 > nameEx("catbarchart")
 > ### * catbarchart
 > 
@@ -705,7 +728,7 @@ function (m, col = c("azure4", "aquamarine4"))
 > ###
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  2.784 0.012 2.798 0 0 
+Time elapsed:  3.83 0.044 3.873 0 0 
 > grDevices::dev.off()
 null device 
           1 

@@ -12,9 +12,7 @@ catbarchart(x)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
-}
+  \item{x}{A Dataframe with Categorical Data. Last Column is the Response Variable}
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
@@ -30,7 +28,7 @@ catbarchart(x)
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Saqib Ali
 }
 \note{
 %%  ~~further notes~~

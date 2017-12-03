@@ -10,4 +10,4 @@ License: GPL (>= 2)
 Exports: count_mat, plotlocalor, chisq.indep, odds.ratios, catbarchart,
         continous2categorical
 Imports: ggplot2, gridExtra
-Built: R 3.4.2; ; 2017-12-03 17:40:05 UTC; unix
+Built: R 3.4.2; ; 2017-12-03 20:04:46 UTC; unix

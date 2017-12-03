@@ -17,6 +17,29 @@ library('CategoricalDataAnalysis')
 
 base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
 cleanEx()
+nameEx("CategoricalDataAnalysis-package")
+### * CategoricalDataAnalysis-package
+
+flush(stderr()); flush(stdout())
+
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+### Name: CategoricalDataAnalysis-package
+### Title: Categorical Data Analysis
+### Aliases: CategoricalDataAnalysis-package CategoricalDataAnalysis
+### Keywords: package
+
+### ** Examples
+
+
+data("crabs2")
+catbarchart(continous2categorical(crabs2))
+
+
+
+
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("CategoricalDataAnalysis-package", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+cleanEx()
 nameEx("catbarchart")
 ### * catbarchart
 

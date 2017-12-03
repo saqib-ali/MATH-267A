@@ -58,6 +58,15 @@ Maintainer: Maham Niaz <maham.niaz@sjsu.edu>
 \textasciitilde{}\textasciitilde{} Optional links to other man pages, e.g. \textasciitilde{}\textasciitilde{}
 \textasciitilde{}\textasciitilde{} \code{\LinkA{<pkg>}{<pkg>}} \textasciitilde{}\textasciitilde{}
 \end{SeeAlso}
+%
+\begin{Examples}
+\begin{ExampleCode}
+
+data("crabs2")
+catbarchart(continous2categorical(crabs2))
+
+\end{ExampleCode}
+\end{Examples}
 \inputencoding{utf8}
 \HeaderA{catbarchart}{Plot Barchart for Categorical Data}{catbarchart}
 \keyword{\textbackslash{}textasciitilde{}kwd1}{catbarchart}
@@ -71,11 +80,13 @@ catbarchart(x)
 %
 \begin{Arguments}
 \begin{ldescription}
-\item[\code{x}] 
-
-
+\item[\code{x}] A Dataframe with Categorical Data. Last Column is the Response Variable
 \end{ldescription}
 \end{Arguments}
+%
+\begin{Author}\relax
+Saqib Ali
+\end{Author}
 %
 \begin{Examples}
 \begin{ExampleCode}
