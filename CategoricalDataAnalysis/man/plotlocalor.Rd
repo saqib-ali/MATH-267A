@@ -59,6 +59,16 @@ Maham Niaz
   m = matrix(c(1,5,13,6,3,5,14,16,36,45,4,6,5,8,9,56), nrow = 4)
   plotlocalor(m) # returns 3x3 plots for the odds ratios of 2x2 subtables in the m matrix
   
+  #local odds ratios for crabs data
+  #load data
+  data("crabs2")
+  #subsetting two columns
+  data <- crabs2[,c(2,5)] #using color and satelite information of horseshoe crab
+  #create matrix
+  m = table(data)
+  #plot local odds ratios 
+  plotlocalor(m)
+  
 ## The function is currently defined as
 function (m, col = c("azure4", "aquamarine4")) 
 {
