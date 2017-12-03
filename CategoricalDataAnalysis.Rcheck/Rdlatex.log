@@ -86,6 +86,10 @@ ummary of odds ratio[]
 Overfull \hbox (85.38034pt too wide) in paragraph at lines 557--557
  []  \T1/pcr/m/n/9 plotlocalor(m) # returns 3x3 plots for the odds ratios of 2x
 2 subtables in the m matrix[] 
+
+Overfull \hbox (42.18039pt too wide) in paragraph at lines 563--563
+ []  \T1/pcr/m/n/9 data <- crabs2[,c(2,5)] #using color and satelite informatio
+n of horseshoe crab[] 
 [10] [11] (./Rd2.aux) )
 (see the transcript file for additional information){/usr/share/texlive/texmf-d
 ist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/
@@ -94,7 +98,7 @@ courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
 are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (11 pages, 88584 bytes).
+Output written on Rd2.pdf (11 pages, 88758 bytes).
 Transcript written on Rd2.log.
 This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex)
  restricted \write18 enabled.
@@ -181,6 +185,10 @@ ummary of odds ratio[]
 Overfull \hbox (85.38034pt too wide) in paragraph at lines 557--557
  []  \T1/pcr/m/n/9 plotlocalor(m) # returns 3x3 plots for the odds ratios of 2x
 2 subtables in the m matrix[] 
+
+Overfull \hbox (42.18039pt too wide) in paragraph at lines 563--563
+ []  \T1/pcr/m/n/9 data <- crabs2[,c(2,5)] #using color and satelite informatio
+n of horseshoe crab[] 
 [11] (./Rd2.aux) )
 (see the transcript file for additional information){/usr/share/texlive/texmf-d
 ist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/
@@ -189,8 +197,8 @@ courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
 are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (11 pages, 88901 bytes).
+Output written on Rd2.pdf (11 pages, 89003 bytes).
 Transcript written on Rd2.log.
 Saving output to ‘CategoricalDataAnalysis-manual.pdf’ ...
 Done
-You may want to clean up by 'rm -rf /tmp/RtmpG0xVFQ/Rd2pdfcc55aa05d31'
+You may want to clean up by 'rm -rf /tmp/RtmpvCu3EN/Rd2pdf1187486be16b'

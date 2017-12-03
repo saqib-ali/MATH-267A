@@ -691,6 +691,16 @@ function (m, type = "local")
 >   m = matrix(c(1,5,13,6,3,5,14,16,36,45,4,6,5,8,9,56), nrow = 4)
 >   plotlocalor(m) # returns 3x3 plots for the odds ratios of 2x2 subtables in the m matrix
 >   
+>   #local odds ratios for crabs data
+>   #load data
+>   data("crabs2")
+>   #subsetting two columns
+>   data <- crabs2[,c(2,5)] #using color and satelite information of horseshoe crab
+>   #create matrix
+>   m = table(data)
+>   #plot local odds ratios 
+>   plotlocalor(m)
+>   
 > ## The function is currently defined as
 > function (m, col = c("azure4", "aquamarine4")) 
 + {
@@ -728,7 +738,7 @@ function (m, col = c("azure4", "aquamarine4"))
 > ###
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  3.779 0.031 3.81 0 0 
+Time elapsed:  3.831 0.031 3.862 0 0 
 > grDevices::dev.off()
 null device 
           1 
