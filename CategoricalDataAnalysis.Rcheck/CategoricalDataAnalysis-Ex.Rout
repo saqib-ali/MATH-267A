@@ -1,0 +1,717 @@
+
+R version 3.4.2 (2017-09-28) -- "Short Summer"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "CategoricalDataAnalysis"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> base::assign(".ExTimings", "CategoricalDataAnalysis-Ex.timings", pos = 'CheckExEnv')
+> base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
+> base::assign(".format_ptime",
++ function(x) {
++   if(!is.na(x[4L])) x[1L] <- x[1L] + x[4L]
++   if(!is.na(x[5L])) x[2L] <- x[2L] + x[5L]
++   options(OutDec = '.')
++   format(x[1L:3L], digits = 7L)
++ },
++ pos = 'CheckExEnv')
+> 
+> ### * </HEADER>
+> library('CategoricalDataAnalysis')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("catbarchart")
+> ### * catbarchart
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: catbarchart
+> ### Title: Plot Barchart for Categorical Data
+> ### Aliases: catbarchart
+> ### Keywords: ~kwd1 ~kwd2
+> 
+> ### ** Examples
+> 
+> 
+> 
+> # catbarchart create Barchart of Categorical Data. The last colmn of the Dataset should be the Response Variable. All variables should be Categorical Data. Use the continous2categorical function to conver Continous Data to Categorical Data
+> 
+> data("crabs2")
+> catbarchart(continous2categorical(crabs2))
+> 
+> 
+> 
+> ## The function is currently defined as
+> function (x) 
++ {
++     xcolumnnames <- colnames(x)
++     responsecol <- ncol(x)
++     plot_hist <- function(column, data, response) ggplot(data, 
++         aes(x = get(column), ..count..)) + geom_bar(aes(fill = get(response)), 
++         position = "dodge") + xlab(column) + scale_fill_discrete(name = response)
++     myplots <- lapply(colnames(x), plot_hist, data = x, response = xcolumnnames[responsecol])
++     myplots <- myplots[-length(myplots)]
++     grid.arrange(grobs = myplots, ncol = 1)
++   }
+function (x) 
+{
+    xcolumnnames <- colnames(x)
+    responsecol <- ncol(x)
+    plot_hist <- function(column, data, response) ggplot(data, 
+        aes(x = get(column), ..count..)) + geom_bar(aes(fill = get(response)), 
+        position = "dodge") + xlab(column) + scale_fill_discrete(name = response)
+    myplots <- lapply(colnames(x), plot_hist, data = x, response = xcolumnnames[responsecol])
+    myplots <- myplots[-length(myplots)]
+    grid.arrange(grobs = myplots, ncol = 1)
+}
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("catbarchart", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("chisq.indep")
+> ### * chisq.indep
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: chisq.indep
+> ### Title: Testing for independence between two categorical variable
+> ### Aliases: chisq.indep
+> ### Keywords: ~kwd1 ~kwd2
+> 
+> ### ** Examples
+> 
+> ##---- Should be DIRECTLY executable !! ----
+> ##-- ==>  Define data, use random,
+> ##--	or do  help(data=index)  for the standard data sets.
+> #attach dataset crabs
+>   data("crabs2")
+>   #create a contingency matrix for crabs color and satelite 
+>   m = table(crabs2$color, crabs2$satellite)
+>   # returns chi squared test of independence for the two variable, color of the crab and satelite status, which is either TRUE or FALSE 
+>   chisq.indep(m)
+Chi-squared test of independence
+  Level = 0.05, df = 3, critical value = 7.8147
+  X-squared = 14.0775
+  G-squared = 13.6977
+The test statistic value is greater than critical value. We reject the null hypothesis and conclude that the two variable are not independent>   
+>   
+>   
+> ## The function is currently defined as
+> function (m, level = 0.05, digits = 4, print = TRUE) 
++ {
++     r.sum <- rowSums(m)
++     c.sum <- colSums(m)
++     n <- sum(m)
++     exp.ct <- outer(r.sum, c.sum, "*")/n
++     res <- m - exp.ct
++     p.res <- res/sqrt(exp.ct)
++     X.sq <- sum(p.res^2)
++     G.sq <- 2 * sum(m * (log(m) - log(exp.ct)))
++     df <- (nrow(m) - 1) * (ncol(m) - 1)
++     c.val <- qchisq(level, df = df, lower.tail = FALSE)
++     est.se <- sqrt(exp.ct * outer((1 - r.sum/n), (1 - c.sum/n), 
++         "*"))
++     s.res <- res/est.se
++     if (print) {
++         cat("Chi-squared test of independence\n")
++         cat("  Level = ", level, ", df = ", df, ", critical value = ", 
++             round(c.val, digits), "\n", sep = "")
++         cat("  X-squared = ", round(X.sq, digits), "\n", sep = "")
++         cat("  G-squared = ", round(G.sq, digits), sep = "")
++       if(X.sq > c.val | G.sq > c.val){
++       cat("\n", sep = "","The test statistic value is greater than critical value. We reject the null hypothesis and conclude that the two variable are not independent")
++     } else {
++       cat("\n", sep = "","The test statistic value is less than critical value. We fail to reject the null hypothesis and conclude that the two variable are independent")
++     }
++     }
++     
++   }
+function (m, level = 0.05, digits = 4, print = TRUE) 
+{
+    r.sum <- rowSums(m)
+    c.sum <- colSums(m)
+    n <- sum(m)
+    exp.ct <- outer(r.sum, c.sum, "*")/n
+    res <- m - exp.ct
+    p.res <- res/sqrt(exp.ct)
+    X.sq <- sum(p.res^2)
+    G.sq <- 2 * sum(m * (log(m) - log(exp.ct)))
+    df <- (nrow(m) - 1) * (ncol(m) - 1)
+    c.val <- qchisq(level, df = df, lower.tail = FALSE)
+    est.se <- sqrt(exp.ct * outer((1 - r.sum/n), (1 - c.sum/n), 
+        "*"))
+    s.res <- res/est.se
+    if (print) {
+        cat("Chi-squared test of independence\n")
+        cat("  Level = ", level, ", df = ", df, ", critical value = ", 
+            round(c.val, digits), "\n", sep = "")
+        cat("  X-squared = ", round(X.sq, digits), "\n", sep = "")
+        cat("  G-squared = ", round(G.sq, digits), sep = "")
+        if (X.sq > c.val | G.sq > c.val) {
+            cat("\n", sep = "", "The test statistic value is greater than critical value. We reject the null hypothesis and conclude that the two variable are not independent")
+        }
+        else {
+            cat("\n", sep = "", "The test statistic value is less than critical value. We fail to reject the null hypothesis and conclude that the two variable are independent")
+        }
+    }
+}
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("chisq.indep", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("continous2categorical")
+> ### * continous2categorical
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: continous2categorical
+> ### Title: continous2categorical function.
+> ### Aliases: continous2categorical
+> ### Keywords: ~kwd1 ~kwd2
+> 
+> ### ** Examples
+> 
+> 
+> data("crabs2")
+> continous2categorical(crabs2)
+          color  spine       width      weight satellite
+1    low-medium   high      medium      medium      TRUE
+2   medium-high   high         low         low     FALSE
+3           low    low  low-medium  low-medium      TRUE
+4   medium-high   high  low-medium  low-medium     FALSE
+5   medium-high   high  low-medium  low-medium      TRUE
+6    low-medium   high  low-medium  low-medium     FALSE
+7           low    low      medium  low-medium     FALSE
+8   medium-high medium  low-medium         low     FALSE
+9    low-medium    low  low-medium         low     FALSE
+10  medium-high   high  low-medium  low-medium     FALSE
+11  medium-high   high  low-medium  low-medium     FALSE
+12   low-medium   high  low-medium  low-medium     FALSE
+13   low-medium   high      medium      medium      TRUE
+14         high medium         low         low     FALSE
+15   low-medium    low  low-medium  low-medium      TRUE
+16          low    low      medium      medium      TRUE
+17   low-medium   high  low-medium         low      TRUE
+18   low-medium   high medium-high      medium      TRUE
+19         high   high  low-medium  low-medium     FALSE
+20   low-medium   high      medium  low-medium      TRUE
+21   low-medium medium         low         low      TRUE
+22          low medium  low-medium  low-medium      TRUE
+23   low-medium    low         low         low      TRUE
+24  medium-high   high      medium  low-medium      TRUE
+25         high   high  low-medium         low      TRUE
+26         high   high      medium         low     FALSE
+27   low-medium   high medium-high      medium      TRUE
+28   low-medium    low      medium  low-medium      TRUE
+29         high   high      medium  low-medium     FALSE
+30   low-medium   high  low-medium  low-medium     FALSE
+31          low    low medium-high      medium      TRUE
+32          low   high  low-medium  low-medium     FALSE
+33   low-medium medium  low-medium         low     FALSE
+34   low-medium    low  low-medium         low      TRUE
+35   low-medium    low      medium  low-medium      TRUE
+36         high   high  low-medium         low     FALSE
+37   low-medium   high      medium  low-medium     FALSE
+38   low-medium   high      medium      medium      TRUE
+39         high   high         low         low     FALSE
+40   low-medium   high      medium  low-medium      TRUE
+41  medium-high   high      medium      medium      TRUE
+42          low    low      medium  low-medium      TRUE
+43          low    low      medium  low-medium      TRUE
+44   low-medium    low medium-high      medium      TRUE
+45  medium-high    low      medium      medium      TRUE
+46  medium-high   high medium-high  low-medium      TRUE
+47   low-medium   high      medium  low-medium      TRUE
+48   low-medium   high  low-medium  low-medium      TRUE
+49   low-medium   high      medium      medium      TRUE
+50   low-medium    low medium-high      medium      TRUE
+51         high   high  low-medium  low-medium      TRUE
+52   low-medium   high      medium      medium      TRUE
+53          low    low      medium  low-medium      TRUE
+54   low-medium   high         low         low      TRUE
+55   low-medium    low  low-medium         low      TRUE
+56   low-medium   high      medium      medium      TRUE
+57   low-medium   high      medium  low-medium      TRUE
+58  medium-high   high      medium  low-medium      TRUE
+59   low-medium    low      medium  low-medium     FALSE
+60         high   high  low-medium  low-medium     FALSE
+61  medium-high   high      medium  low-medium     FALSE
+62  medium-high   high  low-medium  low-medium      TRUE
+63  medium-high    low      medium  low-medium      TRUE
+64   low-medium   high  low-medium  low-medium      TRUE
+65   low-medium   high      medium  low-medium      TRUE
+66   low-medium   high medium-high      medium      TRUE
+67   low-medium   high medium-high      medium      TRUE
+68   low-medium   high      medium  low-medium     FALSE
+69   low-medium    low      medium         low     FALSE
+70   low-medium   high      medium  low-medium      TRUE
+71  medium-high   high  low-medium  low-medium      TRUE
+72  medium-high   high         low         low      TRUE
+73  medium-high   high         low         low     FALSE
+74   low-medium   high  low-medium  low-medium      TRUE
+75  medium-high   high  low-medium         low     FALSE
+76   low-medium medium         low         low     FALSE
+77  medium-high medium  low-medium  low-medium      TRUE
+78   low-medium   high  low-medium  low-medium      TRUE
+79  medium-high   high  low-medium         low     FALSE
+80   low-medium   high  low-medium  low-medium      TRUE
+81  medium-high medium  low-medium  low-medium     FALSE
+82         high   high      medium      medium     FALSE
+83  medium-high   high         low         low     FALSE
+84  medium-high    low  low-medium  low-medium      TRUE
+85   low-medium   high  low-medium  low-medium     FALSE
+86         high   high      medium  low-medium      TRUE
+87   low-medium   high      medium      medium     FALSE
+88         high    low  low-medium  low-medium     FALSE
+89         high   high         low         low     FALSE
+90   low-medium medium  low-medium         low     FALSE
+91   low-medium    low medium-high medium-high      TRUE
+92   low-medium    low      medium  low-medium     FALSE
+93         high   high      medium  low-medium     FALSE
+94   low-medium    low medium-high      medium     FALSE
+95  medium-high   high         low         low     FALSE
+96   low-medium    low medium-high  low-medium      TRUE
+97  medium-high   high  low-medium  low-medium     FALSE
+98  medium-high   high      medium         low      TRUE
+99  medium-high   high  low-medium  low-medium      TRUE
+100 medium-high   high      medium      medium      TRUE
+101  low-medium   high      medium      medium      TRUE
+102  low-medium   high  low-medium         low      TRUE
+103  low-medium   high      medium  low-medium      TRUE
+104  low-medium medium  low-medium  low-medium      TRUE
+105  low-medium    low  low-medium         low      TRUE
+106 medium-high   high      medium      medium      TRUE
+107  low-medium   high      medium  low-medium      TRUE
+108  low-medium   high medium-high      medium      TRUE
+109  low-medium   high  low-medium         low      TRUE
+110  low-medium   high      medium  low-medium      TRUE
+111  low-medium   high      medium      medium      TRUE
+112  low-medium   high      medium  low-medium      TRUE
+113 medium-high   high  low-medium  low-medium     FALSE
+114  low-medium   high  low-medium  low-medium      TRUE
+115  low-medium   high        high      medium      TRUE
+116        high   high  low-medium         low     FALSE
+117        high   high medium-high      medium      TRUE
+118 medium-high   high         low         low     FALSE
+119  low-medium   high  low-medium  low-medium      TRUE
+120 medium-high   high      medium  low-medium      TRUE
+121 medium-high   high  low-medium         low      TRUE
+122         low    low medium-high      medium      TRUE
+123 medium-high   high      medium  low-medium     FALSE
+124  low-medium   high  low-medium         low      TRUE
+125  low-medium   high      medium      medium      TRUE
+126  low-medium medium  low-medium  low-medium     FALSE
+127 medium-high   high      medium      medium      TRUE
+128        high   high         low         low      TRUE
+129  low-medium   high      medium  low-medium      TRUE
+130  low-medium    low  low-medium  low-medium      TRUE
+131         low medium  low-medium         low      TRUE
+132  low-medium   high  low-medium         low     FALSE
+133  low-medium    low      medium      medium      TRUE
+134        high   high  low-medium  low-medium      TRUE
+135  low-medium   high      medium      medium      TRUE
+136  low-medium   high  low-medium  low-medium     FALSE
+137  low-medium    low      medium      medium      TRUE
+138 medium-high   high      medium  low-medium      TRUE
+139  low-medium medium  low-medium  low-medium      TRUE
+140  low-medium   high      medium  low-medium      TRUE
+141  low-medium    low        high        high      TRUE
+142  low-medium   high medium-high      medium      TRUE
+143 medium-high   high medium-high      medium      TRUE
+144  low-medium    low  low-medium         low     FALSE
+145  low-medium   high  low-medium  low-medium     FALSE
+146        high   high  low-medium  low-medium      TRUE
+147  low-medium    low        high medium-high      TRUE
+148  low-medium   high medium-high      medium      TRUE
+149 medium-high   high  low-medium         low      TRUE
+150  low-medium   high medium-high      medium      TRUE
+151  low-medium   high      medium      medium      TRUE
+152  low-medium   high      medium  low-medium     FALSE
+153  low-medium    low         low         low     FALSE
+154  low-medium    low         low         low     FALSE
+155        high   high  low-medium         low     FALSE
+156  low-medium   high  low-medium         low      TRUE
+157  low-medium   high      medium      medium     FALSE
+158  low-medium   high  low-medium         low      TRUE
+159 medium-high   high  low-medium         low     FALSE
+160 medium-high medium medium-high      medium      TRUE
+161  low-medium   high      medium  low-medium      TRUE
+162  low-medium   high  low-medium  low-medium      TRUE
+163  low-medium   high      medium      medium      TRUE
+164        high   high  low-medium  low-medium     FALSE
+165  low-medium   high      medium  low-medium      TRUE
+166  low-medium   high  low-medium  low-medium     FALSE
+167 medium-high   high  low-medium         low     FALSE
+168 medium-high   high      medium  low-medium      TRUE
+169 medium-high   high      medium  low-medium      TRUE
+170 medium-high   high medium-high      medium      TRUE
+171         low    low      medium  low-medium     FALSE
+172        high   high      medium  low-medium     FALSE
+173  low-medium medium  low-medium         low     FALSE
+> 
+> ## The function is currently defined as
+> function (x) 
++ {
++     numberoffactors <- ncol(x) - 1
++     out <- data.frame(0, matrix(nrow = nrow(x), ncol = 1))
++     for (i in 1:numberoffactors) {
++         labs <- c("low", "low-medium", "medium", "medium-high", 
++             "high")
++         vartemp <- cut(x[, i], breaks = 5, labels = labs)
++         out[i] <- vartemp
++     }
++     i <- i + 1
++     out[i] <- x[i]
++     colnames(out) <- colnames(x)
++     return(data.frame(out))
++   }
+function (x) 
+{
+    numberoffactors <- ncol(x) - 1
+    out <- data.frame(0, matrix(nrow = nrow(x), ncol = 1))
+    for (i in 1:numberoffactors) {
+        labs <- c("low", "low-medium", "medium", "medium-high", 
+            "high")
+        vartemp <- cut(x[, i], breaks = 5, labels = labs)
+        out[i] <- vartemp
+    }
+    i <- i + 1
+    out[i] <- x[i]
+    colnames(out) <- colnames(x)
+    return(data.frame(out))
+}
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("continous2categorical", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("count_mat")
+> ### * count_mat
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: count_mat
+> ### Title: creating contingency matrix for categorical data analysis
+> ### Aliases: count_mat
+> ### Keywords: ~kwd1 ~kwd2
+> 
+> ### ** Examples
+> 
+> ##---- Should be DIRECTLY executable !! ----
+> ##-- ==>  Define data, use random,
+> ##--	or do  help(data=index)  for the standard data sets.
+> 
+>   #create vector 1 with three levels
+>   a = c("A","A","B","A", "B","B","C","A","C","B")
+>   #create vector 2 with 4 levels
+>   b = c(1,2,1,4,1,2,2,3,4,3)
+>   # create dataframe with a and b vectors as columns
+>   df = cbind(a,b)
+>   #return count matrix 
+>   m = count_mat(df)
+>   m
+  1 2 3 4
+A 1 1 1 1
+B 2 1 1 0
+C 0 1 0 1
+>   
+> ## The function is currently defined as
+> function (df) 
++ {
++     df_dim <- dim(df)
++     if (df_dim[2] == 2 && length(df_dim) == 2) {
++         factor_df1 <- as.factor(df[, 1])
++         factor_df2 <- as.factor(df[, 2])
++         lev_col1 = levels(factor_df1)
++         lev_col2 = levels(factor_df2)
++         len_col1 = length(lev_col1)
++         len_col2 = length(lev_col2)
++         val = 1
++         for (i in lev_col1) {
++             for (j in lev_col2) {
++                 val = c(val, length(which(df[, 1] == i & df[, 
++                   2] == j)))
++             }
++         }
++         out = matrix(val[-1], byrow = TRUE, nrow = length(lev_col1), 
++             dimnames = list(lev_col1, lev_col2))
++     }
++     else (out = "check dimension")
++     return(out)
++   }
+function (df) 
+{
+    df_dim <- dim(df)
+    if (df_dim[2] == 2 && length(df_dim) == 2) {
+        factor_df1 <- as.factor(df[, 1])
+        factor_df2 <- as.factor(df[, 2])
+        lev_col1 = levels(factor_df1)
+        lev_col2 = levels(factor_df2)
+        len_col1 = length(lev_col1)
+        len_col2 = length(lev_col2)
+        val = 1
+        for (i in lev_col1) {
+            for (j in lev_col2) {
+                val = c(val, length(which(df[, 1] == i & df[, 
+                  2] == j)))
+            }
+        }
+        out = matrix(val[-1], byrow = TRUE, nrow = length(lev_col1), 
+            dimnames = list(lev_col1, lev_col2))
+    }
+    else (out = "check dimension")
+    return(out)
+}
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("count_mat", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("crabs")
+> ### * crabs
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: crabs
+> ### Title: Horseshoe crabs data on characteristics of female crabs. The
+> ###   data includes color spine width weight and the number of satelites
+> ###   attracted by the male and female pair
+> ### Aliases: crabs
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(crabs)
+> str(crabs) #gives the summary of the dataset ; 
+'data.frame':	174 obs. of  5 variables:
+ $ V1: Factor w/ 5 levels "2","3","4","5",..: 5 2 3 1 3 3 2 1 3 2 ...
+ $ V2: Factor w/ 4 levels "1","2","3","spine": 4 3 3 1 3 3 3 1 2 1 ...
+ $ V3: Factor w/ 67 levels "21.0","22.0",..: 67 50 3 31 19 31 11 35 18 10 ...
+ $ V4: Factor w/ 16 levels "0","1","10","11",..: 16 14 1 15 1 10 1 1 1 1 ...
+ $ V5: Factor w/ 57 levels "1200","1300",..: 57 43 5 24 17 30 17 25 11 12 ...
+> plot(crabs) 
+>   
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("crabs", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("crabs2")
+> ### * crabs2
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: crabs2
+> ### Title: contains the data analyzed by Brockmann (1996) and is discussed
+> ###   extensively in Agresti (2002). This is a space-delimited text file in
+> ###   which the variable names appear in the first row. Background
+> ### Aliases: crabs2
+> ### Keywords: datasets
+> 
+> ### ** Examples
+> 
+> data(crabs2)
+> ## maybe str(crabs2) ; plot(crabs2) ...
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("crabs2", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("odds.ratios")
+> ### * odds.ratios
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: odds.ratios
+> ### Title: creating a table with local or global odds ratios
+> ### Aliases: odds.ratios
+> ### Keywords: ~kwd1 ~kwd2
+> 
+> ### ** Examples
+> 
+> ##---- Should be DIRECTLY executable !! ----
+> ##-- ==>  Define data, use random,
+> ##--	or do  help(data=index)  for the standard data sets.
+>  #attaching dataset crabs2
+>  data("crabs2")
+>  # create contingency matrix for variable spine and satelite 
+>  m = table(crabs2$spine, crabs2$satellite)
+>  or1 = odds.ratios(m, "global")
+>  or1 #gives matrix for global odds ratios
+          [,1]
+[1,] 0.7051282
+[2,] 1.0443975
+>  or2 = odds.ratios(m)
+>  or2 #gives matrix for local odds ratios
+          [,1]
+[1,] 0.3701923
+[2,] 2.0730897
+> 
+> ## The function is currently defined as
+> function (m, type = "local") 
++ {
++     nr <- nrow(m)
++     if (nr < 2) 
++         stop("number of rows is less than two")
++     nc <- ncol(m)
++     if (nc < 2) 
++         stop("number of columns is less than two")
++     if (length(type) > 1) 
++         stop("only one type is allowed")
++     opts <- c("local", "global")
++     type <- pmatch(type, opts)
++     if (is.na(type)) 
++         stop("only \"local\" or \"global\" allowed for type")
++     result <- matrix(NA, nrow = nr - 1, ncol = nc - 1)
++     if (type == 1) 
++         for (i in 1:(nr - 1)) for (j in 1:(nc - 1)) result[i, 
++             j] <- m[i, j] * m[i + 1, j + 1]/(m[i, j + 1] * m[i + 
++             1, j])
++     if (type == 2) 
++         for (i in 1:(nr - 1)) for (j in 1:(nc - 1)) {
++             num <- as.numeric(sum(m[1:i, 1:j])) * as.numeric(sum(m[(i + 
++                 1):nr, (j + 1):nc]))
++             den <- as.numeric(sum(m[1:i, (j + 1):nc])) * as.numeric(sum(m[(i + 
++                 1):nr, 1:j]))
++             result[i, j] <- num/den
++         }
++     result
++   }
+function (m, type = "local") 
+{
+    nr <- nrow(m)
+    if (nr < 2) 
+        stop("number of rows is less than two")
+    nc <- ncol(m)
+    if (nc < 2) 
+        stop("number of columns is less than two")
+    if (length(type) > 1) 
+        stop("only one type is allowed")
+    opts <- c("local", "global")
+    type <- pmatch(type, opts)
+    if (is.na(type)) 
+        stop("only \"local\" or \"global\" allowed for type")
+    result <- matrix(NA, nrow = nr - 1, ncol = nc - 1)
+    if (type == 1) 
+        for (i in 1:(nr - 1)) for (j in 1:(nc - 1)) result[i, 
+            j] <- m[i, j] * m[i + 1, j + 1]/(m[i, j + 1] * m[i + 
+            1, j])
+    if (type == 2) 
+        for (i in 1:(nr - 1)) for (j in 1:(nc - 1)) {
+            num <- as.numeric(sum(m[1:i, 1:j])) * as.numeric(sum(m[(i + 
+                1):nr, (j + 1):nc]))
+            den <- as.numeric(sum(m[1:i, (j + 1):nc])) * as.numeric(sum(m[(i + 
+                1):nr, 1:j]))
+            result[i, j] <- num/den
+        }
+    result
+}
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("odds.ratios", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("plot.local.or")
+> ### * plot.local.or
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: plot.local.or
+> ### Title: plotting fourfold plots for odds ratios
+> ### Aliases: plot.local.or
+> ### Keywords: ~kwd1 ~kwd2
+> 
+> ### ** Examples
+> 
+> ##---- Should be DIRECTLY executable !! ----
+> ##-- ==>  Define data, use random,
+> ##--	or do  help(data=index)  for the standard data sets.
+> 
+>   #create 2x2 matrix
+>   m = matrix(c(1,5,13,6), nrow=2)
+>   plot.local.or(m) # returns a single plot shpwing descriptive summary of odds ratio
+>   
+>   #create 4x4 matrix
+>   m = matrix(c(1,5,13,6,3,5,14,16,36,45,4,6,5,8,9,56), nrow = 4)
+>   plot.local.or(m) # returns 3x3 plots for the odds ratios of 2x2 subtables in the m matrix
+>   
+> ## The function is currently defined as
+> function (m, col = c("azure4", "aquamarine4")) 
++ {
++     nr <- nrow(m)
++     if (nr < 2) 
++         stop("number of rows is less than two")
++     nc <- ncol(m)
++     if (nc < 2) 
++         stop("number of columns is less than two")
++     par(mfrow = c(nr - 1, nc - 1))
++     for (i in 1:(nr - 1)) for (j in 1:(nc - 1)) {
++         fourfoldplot(m[i:(i + 1), j:(j + 1)], color = col)
++     }
++   }
+function (m, col = c("azure4", "aquamarine4")) 
+{
+    nr <- nrow(m)
+    if (nr < 2) 
+        stop("number of rows is less than two")
+    nc <- ncol(m)
+    if (nc < 2) 
+        stop("number of columns is less than two")
+    par(mfrow = c(nr - 1, nc - 1))
+    for (i in 1:(nr - 1)) for (j in 1:(nc - 1)) {
+        fourfoldplot(m[i:(i + 1), j:(j + 1)], color = col)
+    }
+}
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("plot.local.or", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> graphics::par(get("par.postscript", pos = 'CheckExEnv'))
+> ### * <FOOTER>
+> ###
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  2.816 0.022 2.838 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')

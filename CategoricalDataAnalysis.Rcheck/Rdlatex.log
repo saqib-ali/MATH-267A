@@ -1,0 +1,196 @@
+Hmm ... looks like a package
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Rd2.tex
+LaTeX2e <2017-04-15>
+Babel <3.12> and hyphenation patterns for 3 language(s) loaded.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo))
+(/usr/share/R/share/texmf/tex/latex/Rd.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu))
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def))
+No file Rd2.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd)
+No file Rd2.toc.
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Underfull \hbox (badness 10000) in paragraph at lines 38--40
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (895.37943pt too wide) in paragraph at lines 82--82
+ []\T1/pcr/m/n/9 # catbarchart create Barchart of Categorical Data. The last co
+lmn of the Dataset should be the Response Variable. All variables should be Cat
+egorical Data. Use the continous2categorical function to conver Continous Data 
+to Categorical Data[] 
+
+Overfull \hbox (25.98041pt too wide) in paragraph at lines 95--95
+ []        \T1/pcr/m/n/9 aes(x = get(column), ..count..)) + geom_bar(aes(fill =
+ get(response)),[] 
+
+Overfull \hbox (42.18039pt too wide) in paragraph at lines 96--96
+ []        \T1/pcr/m/n/9 position = "dodge") + xlab(column) + scale_fill_discre
+te(name = response)[] 
+
+Overfull \hbox (106.98032pt too wide) in paragraph at lines 97--97
+ []    \T1/pcr/m/n/9 myplots <- lapply(colnames(x), plot_hist, data = x, respon
+se = xcolumnnames[responsecol])[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [2]
+Overfull \hbox (333.78006pt too wide) in paragraph at lines 164--164
+ []  \T1/pcr/m/n/9 # returns chi squared test of independence for the two varia
+ble, color of the crab and satelite status, which is either TRUE or FALSE[] 
+[3]
+Overfull \hbox (517.37985pt too wide) in paragraph at lines 192--192
+ []      \T1/pcr/m/n/9 cat("\n", sep = "","The test statistic value is greater 
+than critical value. We reject the null hypothesis and conclude that the two va
+riable are not independent")[] 
+
+Overfull \hbox (522.77985pt too wide) in paragraph at lines 194--194
+ []      \T1/pcr/m/n/9 cat("\n", sep = "","The test statistic value is less tha
+n critical value. We fail to reject the null hypothesis and conclude that the t
+wo variable are independent")[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [4]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [5]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [6]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [7]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [8]
+Overfull \hbox (25.98041pt too wide) in paragraph at lines 487--487
+ []            \T1/pcr/m/n/9 den <- as.numeric(sum(m[1:i, (j + 1):nc])) * as.nu
+meric(sum(m[(i +[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [9]
+Overfull \hbox (58.38037pt too wide) in paragraph at lines 535--535
+ []  \T1/pcr/m/n/9 plot.local.or(m) # returns a single plot shpwing descriptive
+ summary of odds ratio[] 
+
+Overfull \hbox (96.18033pt too wide) in paragraph at lines 539--539
+ []  \T1/pcr/m/n/9 plot.local.or(m) # returns 3x3 plots for the odds ratios of 
+2x2 subtables in the m matrix[] 
+[10] (./Rd2.aux) )
+(see the transcript file for additional information){/usr/share/texlive/texmf-d
+ist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/
+courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (10 pages, 87960 bytes).
+Transcript written on Rd2.log.
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Rd2.tex
+LaTeX2e <2017-04-15>
+Babel <3.12> and hyphenation patterns for 3 language(s) loaded.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo))
+(/usr/share/R/share/texmf/tex/latex/Rd.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu))
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def)) (./Rd2.aux)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd) (./Rd2.toc)
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Underfull \hbox (badness 10000) in paragraph at lines 38--40
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (895.37943pt too wide) in paragraph at lines 82--82
+ []\T1/pcr/m/n/9 # catbarchart create Barchart of Categorical Data. The last co
+lmn of the Dataset should be the Response Variable. All variables should be Cat
+egorical Data. Use the continous2categorical function to conver Continous Data 
+to Categorical Data[] 
+
+Overfull \hbox (25.98041pt too wide) in paragraph at lines 95--95
+ []        \T1/pcr/m/n/9 aes(x = get(column), ..count..)) + geom_bar(aes(fill =
+ get(response)),[] 
+
+Overfull \hbox (42.18039pt too wide) in paragraph at lines 96--96
+ []        \T1/pcr/m/n/9 position = "dodge") + xlab(column) + scale_fill_discre
+te(name = response)[] 
+
+Overfull \hbox (106.98032pt too wide) in paragraph at lines 97--97
+ []    \T1/pcr/m/n/9 myplots <- lapply(colnames(x), plot_hist, data = x, respon
+se = xcolumnnames[responsecol])[] 
+[2] (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [3]
+Overfull \hbox (333.78006pt too wide) in paragraph at lines 164--164
+ []  \T1/pcr/m/n/9 # returns chi squared test of independence for the two varia
+ble, color of the crab and satelite status, which is either TRUE or FALSE[] 
+
+Overfull \hbox (517.37985pt too wide) in paragraph at lines 192--192
+ []      \T1/pcr/m/n/9 cat("\n", sep = "","The test statistic value is greater 
+than critical value. We reject the null hypothesis and conclude that the two va
+riable are not independent")[] 
+
+Overfull \hbox (522.77985pt too wide) in paragraph at lines 194--194
+ []      \T1/pcr/m/n/9 cat("\n", sep = "","The test statistic value is less tha
+n critical value. We fail to reject the null hypothesis and conclude that the t
+wo variable are independent")[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [4]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [5] [6]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def)
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [7]
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [8]
+Overfull \hbox (25.98041pt too wide) in paragraph at lines 487--487
+ []            \T1/pcr/m/n/9 den <- as.numeric(sum(m[1:i, (j + 1):nc])) * as.nu
+meric(sum(m[(i +[] 
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def) [9]
+Overfull \hbox (58.38037pt too wide) in paragraph at lines 535--535
+ []  \T1/pcr/m/n/9 plot.local.or(m) # returns a single plot shpwing descriptive
+ summary of odds ratio[] 
+
+Overfull \hbox (96.18033pt too wide) in paragraph at lines 539--539
+ []  \T1/pcr/m/n/9 plot.local.or(m) # returns 3x3 plots for the odds ratios of 
+2x2 subtables in the m matrix[] 
+[10] (./Rd2.aux) )
+(see the transcript file for additional information){/usr/share/texlive/texmf-d
+ist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/
+courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (10 pages, 88043 bytes).
+Transcript written on Rd2.log.
+Saving output to ‘CategoricalDataAnalysis-manual.pdf’ ...
+Done
+You may want to clean up by 'rm -rf /tmp/RtmpUb2NwF/Rd2pdf62f8497061e7'

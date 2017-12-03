@@ -46,8 +46,9 @@ catbarchart(x)
 
 # catbarchart create Barchart of Categorical Data. The last colmn of the Dataset should be the Response Variable. All variables should be Categorical Data. Use the continous2categorical function to conver Continous Data to Categorical Data
 
-crabs2 <- data("crabs2")
-continous2categorical(crabs2)
+data("crabs2")
+catbarchart(continous2categorical(crabs2))
+
 
 
 ## The function is currently defined as
