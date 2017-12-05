@@ -117,7 +117,7 @@ plotlocalor <- function(m, col = c("azure4", "aquamarine4")) {
   nc <- ncol(m)
   if (nc < 2) stop("number of columns is less than two")
   
-  par(mfrow = c(nr - 1, nc - 1))
+  par(mfrow = c(nr - 1, nc - 1), mar=c(0,0,0,0))
   for (i in 1:(nr - 1))
     for (j in 1:(nc - 1)) { 
       fourfoldplot(m[i:(i+1), j:(j+1)], color = col)

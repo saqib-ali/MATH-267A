@@ -58,6 +58,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 # catbarchart create Barchart of Categorical Data. The last colmn of the Dataset should be the Response Variable. All variables should be Categorical Data. Use the continous2categorical function to conver Continous Data to Categorical Data
 
 data("crabs2")
+head(crabs2)
 catbarchart(continous2categorical(crabs2))
 
 
@@ -93,9 +94,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 ### ** Examples
 
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+
 #attach dataset crabs
   data("crabs2")
   #create a contingency matrix for crabs color and satelite 
@@ -193,9 +192,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 ### ** Examples
 
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+
 
   #create vector 1 with three levels
   a = c("A","A","B","A", "B","B","C","A","C","B")
@@ -270,14 +267,15 @@ flush(stderr()); flush(stdout())
 base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### Name: crabs2
 ### Title: contains the data analyzed by Brockmann (1996) and is discussed
-###   extensively in Agresti (2002). This is a space-delimited text file in
-###   which the variable names appear in the first row. Background
+###   extensively in Agresti (2002). This is a dataframe
 ### Aliases: crabs2
 ### Keywords: datasets
 
 ### ** Examples
 
 data(crabs2)
+head(crabs2)
+str(crabs2)
 ## maybe str(crabs2) ; plot(crabs2) ...
 
 
@@ -298,9 +296,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 ### ** Examples
 
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+
  #attaching dataset crabs2
  data("crabs2")
  # create contingency matrix for variable spine and satelite 
@@ -359,9 +355,6 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 ### ** Examples
 
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
 
   #create 2x2 matrix
   m = matrix(c(1,5,13,6), nrow=2)

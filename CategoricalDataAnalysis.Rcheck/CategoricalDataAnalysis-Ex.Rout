@@ -77,6 +77,14 @@ Type 'q()' to quit R.
 > # catbarchart create Barchart of Categorical Data. The last colmn of the Dataset should be the Response Variable. All variables should be Categorical Data. Use the continous2categorical function to conver Continous Data to Categorical Data
 > 
 > data("crabs2")
+> head(crabs2)
+  color spine width weight satellite
+2     3     3  28.3   3050      TRUE
+3     4     3  22.5   1550     FALSE
+4     2     1  26.0   2300      TRUE
+5     4     3  24.8   2100     FALSE
+6     4     3  26.0   2600      TRUE
+7     3     3  23.8   2100     FALSE
 > catbarchart(continous2categorical(crabs2))
 > 
 > 
@@ -123,9 +131,7 @@ function (x)
 > 
 > ### ** Examples
 > 
-> ##---- Should be DIRECTLY executable !! ----
-> ##-- ==>  Define data, use random,
-> ##--	or do  help(data=index)  for the standard data sets.
+> 
 > #attach dataset crabs
 >   data("crabs2")
 >   #create a contingency matrix for crabs color and satelite 
@@ -445,9 +451,7 @@ function (x)
 > 
 > ### ** Examples
 > 
-> ##---- Should be DIRECTLY executable !! ----
-> ##-- ==>  Define data, use random,
-> ##--	or do  help(data=index)  for the standard data sets.
+> 
 > 
 >   #create vector 1 with three levels
 >   a = c("A","A","B","A", "B","B","C","A","C","B")
@@ -555,14 +559,28 @@ function (df)
 > base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 > ### Name: crabs2
 > ### Title: contains the data analyzed by Brockmann (1996) and is discussed
-> ###   extensively in Agresti (2002). This is a space-delimited text file in
-> ###   which the variable names appear in the first row. Background
+> ###   extensively in Agresti (2002). This is a dataframe
 > ### Aliases: crabs2
 > ### Keywords: datasets
 > 
 > ### ** Examples
 > 
 > data(crabs2)
+> head(crabs2)
+  color spine width weight satellite
+2     3     3  28.3   3050      TRUE
+3     4     3  22.5   1550     FALSE
+4     2     1  26.0   2300      TRUE
+5     4     3  24.8   2100     FALSE
+6     4     3  26.0   2600      TRUE
+7     3     3  23.8   2100     FALSE
+> str(crabs2)
+'data.frame':	173 obs. of  5 variables:
+ $ color    : int  3 4 2 4 4 3 2 4 3 4 ...
+ $ spine    : int  3 3 1 3 3 3 1 2 1 3 ...
+ $ width    : num  28.3 22.5 26 24.8 26 23.8 26.5 24.7 23.7 25.6 ...
+ $ weight   : int  3050 1550 2300 2100 2600 2100 2350 1900 1950 2150 ...
+ $ satellite: logi  TRUE FALSE TRUE FALSE TRUE FALSE ...
 > ## maybe str(crabs2) ; plot(crabs2) ...
 > 
 > 
@@ -583,9 +601,7 @@ function (df)
 > 
 > ### ** Examples
 > 
-> ##---- Should be DIRECTLY executable !! ----
-> ##-- ==>  Define data, use random,
-> ##--	or do  help(data=index)  for the standard data sets.
+> 
 >  #attaching dataset crabs2
 >  data("crabs2")
 >  # create contingency matrix for variable spine and satelite 
@@ -679,9 +695,6 @@ function (m, type = "local")
 > 
 > ### ** Examples
 > 
-> ##---- Should be DIRECTLY executable !! ----
-> ##-- ==>  Define data, use random,
-> ##--	or do  help(data=index)  for the standard data sets.
 > 
 >   #create 2x2 matrix
 >   m = matrix(c(1,5,13,6), nrow=2)
@@ -738,7 +751,7 @@ function (m, col = c("azure4", "aquamarine4"))
 > ###
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  2.955 0.021 2.976 0 0 
+Time elapsed:  2.924 0.025 2.949 0 0 
 > grDevices::dev.off()
 null device 
           1 

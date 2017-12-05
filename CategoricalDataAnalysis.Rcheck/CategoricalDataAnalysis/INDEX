@@ -12,9 +12,7 @@ crabs                   Horseshoe crabs data on characteristics of
                         attracted by the male and female pair
 crabs2                  contains the data analyzed by Brockmann (1996)
                         and is discussed extensively in Agresti (2002).
-                        This is a space-delimited text file in which
-                        the variable names appear in the first row.
-                        Background
+                        This is a dataframe
 odds.ratios             creating a table with local or global odds
                         ratios
 plotlocalor             plotting fourfold plots for odds ratios

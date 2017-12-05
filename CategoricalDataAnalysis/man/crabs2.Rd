@@ -3,12 +3,12 @@
 \docType{data}
 \title{
 
-contains the data analyzed by Brockmann (1996) and is discussed extensively in Agresti (2002). This is a space-delimited text file in which the variable names appear in the first row.
-Background
+contains the data analyzed by Brockmann (1996) and is discussed extensively in Agresti (2002). This is a dataframe
 
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of the dataset. ~~
+contains the data analyzed by Brockmann (1996) and is discussed extensively in Agresti (2002). This is a dataframe
+
 }
 \usage{data("crabs2")}
 \format{
@@ -32,6 +32,8 @@ Background
 }
 \examples{
 data(crabs2)
+head(crabs2)
+str(crabs2)
 ## maybe str(crabs2) ; plot(crabs2) ...
 }
 \keyword{datasets}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.11.3)  4 DEC 2017 16:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.11.3)  4 DEC 2017 19:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -716,7 +716,7 @@ File: latin1.def 2015/03/17 v1.2c Input encoding file
 
 
 Writing index file Rd2.idx
-(/tmp/Rtmp0R8EOF/Rd2pdf306539e79b6c/Rd2.aux)
+(/tmp/RtmpLDGa8Z/Rd2pdf189c407aa310/Rd2.aux)
 \openout1 = `Rd2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -773,8 +773,8 @@ LaTeX Info: Redefining \ref on input line 8.
 LaTeX Info: Redefining \pageref on input line 8.
 LaTeX Info: Redefining \nameref on input line 8.
 
-(/tmp/Rtmp0R8EOF/Rd2pdf306539e79b6c/Rd2.out)
-(/tmp/Rtmp0R8EOF/Rd2pdf306539e79b6c/Rd2.out)
+(/tmp/RtmpLDGa8Z/Rd2pdf189c407aa310/Rd2.out)
+(/tmp/RtmpLDGa8Z/Rd2pdf189c407aa310/Rd2.out)
 \@outlinefile=\write4
 \openout4 = `Rd2.out'.
 
@@ -798,7 +798,7 @@ LaTeX Font Info:    Try loading font information for T1+phv on input line 28.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
-(/tmp/Rtmp0R8EOF/Rd2pdf306539e79b6c/Rd2.toc
+(/tmp/RtmpLDGa8Z/Rd2pdf189c407aa310/Rd2.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -819,13 +819,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--42
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 58.
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
 
+ []
+
+LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
+(Font)              scaled to size 9.0pt on input line 54.
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 ) [2]
-Overfull \hbox (629.1766pt too wide) in paragraph at lines 90--90
+Overfull \hbox (629.1766pt too wide) in paragraph at lines 92--92
  []\T1/zi4/m/n/9 # catbarchart create Barchart of Categorical Data. The last co
 lmn of the Dataset should be the Response Variable. All variables should be Cat
 egorical Data. Use the continous2categorical function to conver Continous Data 
@@ -833,7 +836,7 @@ to Categorical Data[]
  []
 
 
-Overfull \hbox (3.74101pt too wide) in paragraph at lines 105--105
+Overfull \hbox (3.74101pt too wide) in paragraph at lines 108--108
  []    \T1/zi4/m/n/9 myplots <- lapply(colnames(x), plot_hist, data = x, respon
 se = xcolumnnames[responsecol])[] 
  []
@@ -841,20 +844,20 @@ se = xcolumnnames[responsecol])[]
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 ) [3]
-Overfull \hbox (174.70421pt too wide) in paragraph at lines 172--172
+Overfull \hbox (174.70421pt too wide) in paragraph at lines 173--173
  []  \T1/zi4/m/n/9 # returns chi squared test of independence for the two varia
 ble, color of the crab and satelite status, which is either TRUE or FALSE[] 
  []
 
 
-Overfull \hbox (318.6858pt too wide) in paragraph at lines 200--200
+Overfull \hbox (318.6858pt too wide) in paragraph at lines 201--201
  []      \T1/zi4/m/n/9 cat("\n", sep = "","The test statistic value is greater 
 than critical value. We reject the null hypothesis and conclude that the two va
 riable are not independent")[] 
  []
 
 
-Overfull \hbox (321.68274pt too wide) in paragraph at lines 202--202
+Overfull \hbox (321.68274pt too wide) in paragraph at lines 203--203
  []      \T1/zi4/m/n/9 cat("\n", sep = "","The test statistic value is less tha
 n critical value. We fail to reject the null hypothesis and conclude that the t
 wo variable are independent")[] 
@@ -878,7 +881,7 @@ File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 ) [10]
-(/tmp/Rtmp0R8EOF/Rd2pdf306539e79b6c/Rd2.ind [11]
+(/tmp/RtmpLDGa8Z/Rd2pdf189c407aa310/Rd2.ind [11]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 3.
 
@@ -896,22 +899,22 @@ Overfull \hbox (15.01662pt too wide) in paragraph at lines 26--28
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 583.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 583.
- (/tmp/Rtmp0R8EOF/Rd2pdf306539e79b6c/Rd2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 583.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 583.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 584.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 584.
+ (/tmp/RtmpLDGa8Z/Rd2pdf189c407aa310/Rd2.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 584.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 584.
 Package rerunfilecheck Info: File `Rd2.out' has not changed.
 (rerunfilecheck)             Checksum: E601391DE479189C8E05B9864098DC05;572.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 583.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 584.
  ) 
 Here is how much of TeX's memory you used:
- 6661 strings out of 494931
- 94986 string characters out of 6180851
+ 6662 strings out of 494931
+ 94997 string characters out of 6180851
  171174 words of memory out of 5000000
  9772 multiletter control sequences out of 15000+600000
  40674 words of font info for 49 fonts, out of 8000000 for 9000
@@ -925,10 +928,10 @@ st/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/ut
 mr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (12 pages, 109505 bytes).
+Output written on Rd2.pdf (12 pages, 107593 bytes).
 PDF statistics:
- 242 PDF objects out of 1000 (max. 8388607)
- 218 compressed objects within 3 object streams
- 81 named destinations out of 1000 (max. 500000)
+ 243 PDF objects out of 1000 (max. 8388607)
+ 219 compressed objects within 3 object streams
+ 82 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

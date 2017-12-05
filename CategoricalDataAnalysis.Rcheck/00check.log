@@ -9,6 +9,8 @@
 * checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Maham Niaz <maham.niaz@sjsu.edu>’
 
+New submission
+
 Unknown, possibly mis-spelled, fields in DESCRIPTION:
   ‘Exports’
 
@@ -29,10 +31,7 @@ The build time stamp is missing.
 * checking for hidden files and directories ... OK
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
-* checking whether package ‘CategoricalDataAnalysis’ can be installed ... WARNING
-Found the following significant warnings:
-  Warning: /home/saqib/datascience/SJSUStats/MATH-267A/CategoricalDataAnalysis/man/CategoricalDataAnalysis-package.Rd:26: All text must be in a section
-See ‘/home/saqib/datascience/SJSUStats/MATH-267A/CategoricalDataAnalysis.Rcheck/00install.out’ for details.
+* checking whether package ‘CategoricalDataAnalysis’ can be installed ... OK
 * checking installed package size ... OK
 * checking package directory ... OK
 * checking DESCRIPTION meta-information ... NOTE
@@ -64,16 +63,14 @@ Undefined global functions or variables:
 Consider adding
   importFrom("graphics", "fourfoldplot", "par")
 to your NAMESPACE file.
-* checking Rd files ... WARNING
-prepare_Rd: CategoricalDataAnalysis-package.Rd:26: All text must be in a section
-prepare_Rd: CategoricalDataAnalysis-package.Rd:28-30: Dropping empty section \seealso
-prepare_Rd: catbarchart.Rd:7-9: Dropping empty section \description
-prepare_Rd: catbarchart.Rd:17-19: Dropping empty section \details
-prepare_Rd: catbarchart.Rd:20-26: Dropping empty section \value
-prepare_Rd: catbarchart.Rd:33-35: Dropping empty section \note
-prepare_Rd: catbarchart.Rd:27-29: Dropping empty section \references
-prepare_Rd: catbarchart.Rd:39-41: Dropping empty section \seealso
-checkRd: (5) catbarchart.Rd:0-69: Must have a \description
+* checking Rd files ... NOTE
+prepare_Rd: CategoricalDataAnalysis-package.Rd:23-24: Dropping empty section \references
+prepare_Rd: CategoricalDataAnalysis-package.Rd:26-28: Dropping empty section \seealso
+prepare_Rd: catbarchart.Rd:19-21: Dropping empty section \details
+prepare_Rd: catbarchart.Rd:22-28: Dropping empty section \value
+prepare_Rd: catbarchart.Rd:35-37: Dropping empty section \note
+prepare_Rd: catbarchart.Rd:29-31: Dropping empty section \references
+prepare_Rd: catbarchart.Rd:41-43: Dropping empty section \seealso
 prepare_Rd: chisq.indep.Rd:34-36: Dropping empty section \details
 prepare_Rd: chisq.indep.Rd:50-52: Dropping empty section \note
 prepare_Rd: chisq.indep.Rd:44-46: Dropping empty section \references
@@ -88,11 +85,9 @@ prepare_Rd: count_mat.Rd:31-33: Dropping empty section \references
 prepare_Rd: count_mat.Rd:43-45: Dropping empty section \seealso
 prepare_Rd: crabs.Rd:22-24: Dropping empty section \details
 prepare_Rd: crabs.Rd:28-30: Dropping empty section \references
-prepare_Rd: crabs2.Rd:10-12: Dropping empty section \description
 prepare_Rd: crabs2.Rd:24-26: Dropping empty section \details
 prepare_Rd: crabs2.Rd:27-29: Dropping empty section \source
 prepare_Rd: crabs2.Rd:30-32: Dropping empty section \references
-checkRd: (5) crabs2.Rd:0-38: Must have a \description
 prepare_Rd: odds.ratios.Rd:24-26: Dropping empty section \details
 prepare_Rd: odds.ratios.Rd:41-43: Dropping empty section \note
 prepare_Rd: odds.ratios.Rd:35-37: Dropping empty section \references
@@ -127,4 +122,4 @@ These lines will be truncated in the PDF manual.
 * checking examples ... OK
 * checking PDF version of manual ... OK
 * DONE
-Status: 2 WARNINGs, 4 NOTEs
+Status: 5 NOTEs
