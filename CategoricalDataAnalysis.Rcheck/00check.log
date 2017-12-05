@@ -9,8 +9,6 @@
 * checking CRAN incoming feasibility ... NOTE
 Maintainer: ‘Maham Niaz <maham.niaz@sjsu.edu>’
 
-New submission
-
 Unknown, possibly mis-spelled, fields in DESCRIPTION:
   ‘Exports’
 
@@ -68,6 +66,7 @@ Consider adding
 to your NAMESPACE file.
 * checking Rd files ... WARNING
 prepare_Rd: CategoricalDataAnalysis-package.Rd:26: All text must be in a section
+prepare_Rd: CategoricalDataAnalysis-package.Rd:28-30: Dropping empty section \seealso
 prepare_Rd: catbarchart.Rd:7-9: Dropping empty section \description
 prepare_Rd: catbarchart.Rd:17-19: Dropping empty section \details
 prepare_Rd: catbarchart.Rd:20-26: Dropping empty section \value
@@ -116,8 +115,7 @@ Rd file 'chisq.indep.Rd':
            cat("\n", sep = "","The test statistic value is less than critical value. We fail to reject the null hypothesis and conclude that ... [TRUNCATED]
 
 These lines will be truncated in the PDF manual.
-* checking Rd cross-references ... WARNING
-Unknown package ‘<pkg>’ in Rd xrefs
+* checking Rd cross-references ... OK
 * checking for missing documentation entries ... OK
 * checking for code/documentation mismatches ... OK
 * checking Rd \usage sections ... OK
@@ -127,9 +125,6 @@ Unknown package ‘<pkg>’ in Rd xrefs
 * checking data for non-ASCII characters ... OK
 * checking data for ASCII and uncompressed saves ... OK
 * checking examples ... OK
-* checking PDF version of manual ... WARNING
-LaTeX errors when creating PDF version.
-This typically indicates Rd problems.
-* checking PDF version of manual without hyperrefs or index ... OK
+* checking PDF version of manual ... OK
 * DONE
-Status: 4 WARNINGs, 4 NOTEs
+Status: 2 WARNINGs, 4 NOTEs

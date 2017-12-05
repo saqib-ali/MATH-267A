@@ -99,6 +99,7 @@ function (m, level = 0.05, digits = 4, print = TRUE)
   }
   
 }
+}
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")

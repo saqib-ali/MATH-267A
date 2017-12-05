@@ -5,7 +5,9 @@
   Plot Barchart for Categorical Data
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+  This function plot a Barchart for Categorical Data. The Dataframe must have Categorical Data. The Last Column of the Data Frame must be the Response Variable
+
+
 }
 \usage{
 catbarchart(x)

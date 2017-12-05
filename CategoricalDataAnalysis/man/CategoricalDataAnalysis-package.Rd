@@ -18,7 +18,7 @@ The DESCRIPTION file:
 \author{
 \packageAuthor{CategoricalDataAnalysis}
 
-Maintainer: \packageMaintainer{CategoricalDataAnalysis}
+Maintaitexlive-fonts-extraner: \packageMaintainer{CategoricalDataAnalysis}
 }
 \references{
 ~~ Literature or other references for background information ~~
@@ -26,8 +26,7 @@ Maintainer: \packageMaintainer{CategoricalDataAnalysis}
 ~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R documentation directory ~~
 \keyword{ package }
 \seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
+
 }
 \examples{
 
