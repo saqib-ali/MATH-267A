@@ -47,9 +47,6 @@ Maham Niaz
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
 
   #create 2x2 matrix
   m = matrix(c(1,5,13,6), nrow=2)
