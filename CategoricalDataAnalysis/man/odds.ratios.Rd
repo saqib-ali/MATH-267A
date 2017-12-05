@@ -48,9 +48,7 @@ Maham Niaz
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+
  #attaching dataset crabs2
  data("crabs2")
  # create contingency matrix for variable spine and satelite 
